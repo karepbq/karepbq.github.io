@@ -200,7 +200,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -210,7 +210,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -253,6 +253,128 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.karepbq.com/2017/07/22/grep/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kare">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kare'note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/22/grep/" itemprop="url">grep(常用)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-22T08:15:13+08:00">
+                2017-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>grep是一个很大的命令，可以搜索文件，也可以搜索一个文本内的字符，使用过的人相信一定会喜欢上她 ^_^。</p>
+<h2 id="常规"><a href="#常规" class="headerlink" title="常规"></a>常规</h2><p>先简单介绍几个常用的参数。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">-i (ignore-case) 忽略大小写</div><div class="line"></div><div class="line">-n (line-number) 显示行号</div><div class="line"></div><div class="line">-c (count) 统计次数</div><div class="line"></div><div class="line">-r 递归查找</div><div class="line"></div><div class="line">-o 只显示查找到的项</div><div class="line"></div><div class="line">-v 反转查找</div><div class="line"></div><div class="line">-W 精确查找</div></pre></td></tr></table></figure></p>
+<p>比如我现在要查找Pay.h里面’pay’字符出现了多少次。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -c <span class="string">"pay"</span></div></pre></td></tr></table></figure></p>
+<p>再如，我查找一个文件里面的字符‘pay’,不管大小都统计出来<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -c -i <span class="string">"pay"</span></div></pre></td></tr></table></figure></p>
+<p>如果要显示行号，那么加上<code>-n</code>即可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"pay"</span></div></pre></td></tr></table></figure></p>
+<p>例如：我要查找不是以#开始的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -v <span class="string">"#"</span></div></pre></td></tr></table></figure></p>
+<p>例如：我要查找”inet”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ifconfig | grep -w <span class="string">"inet"</span></div></pre></td></tr></table></figure></p>
+<h2 id="grep的正则表达式"><a href="#grep的正则表达式" class="headerlink" title="grep的正则表达式"></a>grep的正则表达式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="string">"^"</span> 锚定行的开始 如：<span class="string">'^typedef'</span>匹配所有以typedef开头的行。</div><div class="line"></div><div class="line"><span class="string">"$"</span> 锚定行的结束 如：<span class="string">'typedef$'</span>匹配所有以typedef结尾的行。</div></pre></td></tr></table></figure>
+<p>例如：查找所有以##开头的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"^##"</span></div></pre></td></tr></table></figure></p>
+<p>例如：查找文件里，所有以逗号结束的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"。$"</span></div></pre></td></tr></table></figure></p>
+<h2 id="文件查找"><a href="#文件查找" class="headerlink" title="文件查找"></a>文件查找</h2><p>例如我要查找当前目录及其子目录的所有png图片<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep .png . -r -n -o</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://www.karepbq.com/2017/07/22/find-的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -282,7 +404,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-22T07:22:36+08:00">
                 2017-07-22
@@ -425,8 +547,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -438,8 +560,8 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">tags</span>
               
             </div>
           
@@ -489,7 +611,7 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

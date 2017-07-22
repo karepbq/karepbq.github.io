@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="find," />
+  <meta name="keywords" content="grep," />
 
 
 
@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="find使用find使我们经常使用的一个命令，也是很简单的一个命令。学习他，有利于提供我们的工作效率哦。（着一片文章记载的，有一些是和上一章文章中的grep,结合使用的） 比如：我要查找一首MP3,名字叫：末班车的歌曲1find . -name &quot;*.mp3&quot; | grep -i 末班车 其中|的作用是，把find查找的结果传递给后面的命令使用。 例如：查找mp3，但是不要出现”kugou”  “">
-<meta name="keywords" content="find">
+<meta name="description" content="grep是一个很大的命令，可以搜索文件，也可以搜索一个文本内的字符，使用过的人相信一定会喜欢上她 ^_^。 常规先简单介绍几个常用的参数。12345678910111213-i (ignore-case) 忽略大小写-n (line-number) 显示行号-c (count) 统计次数-r 递归查找-o 只显示查找到的项-v 反转查找-W 精确查找 比如我现在要查找Pay.h里面’pay’字符出">
+<meta name="keywords" content="grep">
 <meta property="og:type" content="article">
-<meta property="og:title" content="find 的使用">
-<meta property="og:url" content="http://www.karepbq.com/2017/07/22/find-的使用/index.html">
+<meta property="og:title" content="grep(常用)">
+<meta property="og:url" content="http://www.karepbq.com/2017/07/22/grep/index.html">
 <meta property="og:site_name" content="Kare&#39;note">
-<meta property="og:description" content="find使用find使我们经常使用的一个命令，也是很简单的一个命令。学习他，有利于提供我们的工作效率哦。（着一片文章记载的，有一些是和上一章文章中的grep,结合使用的） 比如：我要查找一首MP3,名字叫：末班车的歌曲1find . -name &quot;*.mp3&quot; | grep -i 末班车 其中|的作用是，把find查找的结果传递给后面的命令使用。 例如：查找mp3，但是不要出现”kugou”  “">
-<meta property="og:updated_time" content="2017-07-21T23:52:00.000Z">
+<meta property="og:description" content="grep是一个很大的命令，可以搜索文件，也可以搜索一个文本内的字符，使用过的人相信一定会喜欢上她 ^_^。 常规先简单介绍几个常用的参数。12345678910111213-i (ignore-case) 忽略大小写-n (line-number) 显示行号-c (count) 统计次数-r 递归查找-o 只显示查找到的项-v 反转查找-W 精确查找 比如我现在要查找Pay.h里面’pay’字符出">
+<meta property="og:updated_time" content="2017-07-22T00:15:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="find 的使用">
-<meta name="twitter:description" content="find使用find使我们经常使用的一个命令，也是很简单的一个命令。学习他，有利于提供我们的工作效率哦。（着一片文章记载的，有一些是和上一章文章中的grep,结合使用的） 比如：我要查找一首MP3,名字叫：末班车的歌曲1find . -name &quot;*.mp3&quot; | grep -i 末班车 其中|的作用是，把find查找的结果传递给后面的命令使用。 例如：查找mp3，但是不要出现”kugou”  “">
+<meta name="twitter:title" content="grep(常用)">
+<meta name="twitter:description" content="grep是一个很大的命令，可以搜索文件，也可以搜索一个文本内的字符，使用过的人相信一定会喜欢上她 ^_^。 常规先简单介绍几个常用的参数。12345678910111213-i (ignore-case) 忽略大小写-n (line-number) 显示行号-c (count) 统计次数-r 递归查找-o 只显示查找到的项-v 反转查找-W 精确查找 比如我现在要查找Pay.h里面’pay’字符出">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://www.karepbq.com/2017/07/22/find-的使用/"/>
+  <link rel="canonical" href="http://www.karepbq.com/2017/07/22/grep/"/>
 
 
 
 
 
-  <title>find 的使用 | Kare'note</title>
+  <title>grep(常用) | Kare'note</title>
   
 
 
@@ -256,7 +256,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.karepbq.com/2017/07/22/find-的使用/">
+    <link itemprop="mainEntityOfPage" href="http://www.karepbq.com/2017/07/22/grep/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kare">
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">find 的使用</h1>
+          <h1 class="post-title" itemprop="name headline">grep(常用)</h1>
         
 
         <div class="post-meta">
@@ -285,7 +285,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-22T07:22:36+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-22T08:15:13+08:00">
                 2017-07-22
               </time>
             
@@ -320,30 +320,17 @@
       
 
       
-        <p>find使用<br>find使我们经常使用的一个命令，也是很简单的一个命令。学习他，有利于提供我们的工作效率哦。（着一片文章记载的，有一些是和上一章文章中的<code>grep</code>,结合使用的）</p>
-<p>比如：我要查找一首MP3,名字叫：末班车的歌曲<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.mp3"</span> | grep -i 末班车</div></pre></td></tr></table></figure></p>
-<p>其中<code>|</code>的作用是，把find查找的结果传递给后面的命令使用。</p>
-<p>例如：查找mp3，但是不要出现”kugou”  “timedo” “time do” “shuangyue” “网易” “PomodoroWorks” “番茄” 这些字样，意思为，不要显示这些文件目录中的mp3。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.mp3"</span> | grep -v -i <span class="string">'kugou\|timedo\|time do\|shuangyue\|网易\|PomodoroWorks\|番茄’</span></div></pre></td></tr></table></figure></p>
-<p>上面这个等同于<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.mp3"</span> | egrep -v -i <span class="string">'kugou|timedo|time do|shuangyue|网易|PomodoroWorks|番茄'</span></div></pre></td></tr></table></figure></p>
-<p>例如:我想在一条grep命令中查找‘linuxtechi’和‘root’单词，使用<code>-e</code>参数，我们可以查找多个模式。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep -e <span class="string">"linuxtechi"</span> -e <span class="string">"root"</span> /etc/passwd</div></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-<span class="built_in">type</span> 只寻找符号指定的文件类型的文件</div><div class="line"></div><div class="line">-f 普通文件</div><div class="line"></div><div class="line">-i 忽略大小写</div><div class="line"></div><div class="line">-o 多个文件一起查找</div></pre></td></tr></table></figure>
-<p>查找“tecmint.txt” 然后删除掉<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -<span class="built_in">type</span> f -name <span class="string">"tecmint.txt"</span> -<span class="built_in">exec</span> rm -f &#123;&#125; \;</div></pre></td></tr></table></figure></p>
-<p>查找以”.txt”结尾的文件，然后全部删除掉<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -<span class="built_in">type</span> f -name <span class="string">"*.txt"</span> -<span class="built_in">exec</span> rm -f &#123;&#125; \;</div></pre></td></tr></table></figure></p>
-<p>忽略大小写查找<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -iname <span class="string">"*.txt"</span></div></pre></td></tr></table></figure></p>
-<p>当前目录及其子目录查找所有以.txt 和 .pdf结尾的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name “*.txt” -o -name “*.pdf”</div></pre></td></tr></table></figure></p>
-<p>在工作中，经常遇到要把查到的东西写入到一个文件中，可以使用这个命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Find . -<span class="built_in">type</span> f -name “*.txt” -<span class="built_in">exec</span> cat &#123;&#125; \;&gt;out.txt</div></pre></td></tr></table></figure></p>
-<p>等同于<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.txt"</span> | tee out.txt</div></pre></td></tr></table></figure></p>
-<p>把查到的文件cp到另一个目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -<span class="built_in">type</span> f -name <span class="string">"*.mp3"</span> -<span class="built_in">exec</span> cp &#123;&#125; /Users/kare/Desktop \;</div></pre></td></tr></table></figure></p>
-<h2 id="find-and-sed"><a href="#find-and-sed" class="headerlink" title="find and sed"></a>find and sed</h2><p>sed 格式如下<br>sed -i “.文件类型” “s/被替换之前的内容/要替换的内容/g”</p>
-<p>使用 <code>-i</code> 才会写入文件</p>
-<p>此命令用到了find，sed.这句的意思是查找当前目录及其子目录的.m文件，然后把</p>
-<p>“@end -(BOOL)needInputView{ return NO; }”</p>
-<p>改成</p>
-<p>“-(BOOL)needInputView{ return NO; } @end”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.m"</span> -<span class="built_in">type</span> f | xargs sed -i <span class="string">".m"</span> <span class="string">"s/@end -(BOOL)needInputView&#123; return NO; &#125;/-(BOOL)needInputView&#123; return NO; &#125; @end /g”</span></div></pre></td></tr></table></figure></p>
-<p>这句的意思是查找当前目录及其子目录的.m文件，然后找出文件中有“手动输入”字样的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.m"</span> -<span class="built_in">type</span> f | xargs grep -r <span class="string">"手动输入"</span></div></pre></td></tr></table></figure></p>
-<h2 id="tee-额外"><a href="#tee-额外" class="headerlink" title="tee(额外)"></a>tee(额外)</h2><p>tee将数据重定向到文件中。</p>
-<p>意思为将ls显示的结果写到out.txt文件中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls | tee out.txt</div></pre></td></tr></table></figure></p>
-<p>意思为将ls显示的结果写到out.txt文件中,并显示行号<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls | tee out.txt | cat -n</div></pre></td></tr></table></figure></p>
+        <p>grep是一个很大的命令，可以搜索文件，也可以搜索一个文本内的字符，使用过的人相信一定会喜欢上她 ^_^。</p>
+<h2 id="常规"><a href="#常规" class="headerlink" title="常规"></a>常规</h2><p>先简单介绍几个常用的参数。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">-i (ignore-case) 忽略大小写</div><div class="line"></div><div class="line">-n (line-number) 显示行号</div><div class="line"></div><div class="line">-c (count) 统计次数</div><div class="line"></div><div class="line">-r 递归查找</div><div class="line"></div><div class="line">-o 只显示查找到的项</div><div class="line"></div><div class="line">-v 反转查找</div><div class="line"></div><div class="line">-W 精确查找</div></pre></td></tr></table></figure></p>
+<p>比如我现在要查找Pay.h里面’pay’字符出现了多少次。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -c <span class="string">"pay"</span></div></pre></td></tr></table></figure></p>
+<p>再如，我查找一个文件里面的字符‘pay’,不管大小都统计出来<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -c -i <span class="string">"pay"</span></div></pre></td></tr></table></figure></p>
+<p>如果要显示行号，那么加上<code>-n</code>即可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"pay"</span></div></pre></td></tr></table></figure></p>
+<p>例如：我要查找不是以#开始的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -v <span class="string">"#"</span></div></pre></td></tr></table></figure></p>
+<p>例如：我要查找”inet”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ifconfig | grep -w <span class="string">"inet"</span></div></pre></td></tr></table></figure></p>
+<h2 id="grep的正则表达式"><a href="#grep的正则表达式" class="headerlink" title="grep的正则表达式"></a>grep的正则表达式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="string">"^"</span> 锚定行的开始 如：<span class="string">'^typedef'</span>匹配所有以typedef开头的行。</div><div class="line"></div><div class="line"><span class="string">"$"</span> 锚定行的结束 如：<span class="string">'typedef$'</span>匹配所有以typedef结尾的行。</div></pre></td></tr></table></figure>
+<p>例如：查找所有以##开头的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"^##"</span></div></pre></td></tr></table></figure></p>
+<p>例如：查找文件里，所有以逗号结束的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"。$"</span></div></pre></td></tr></table></figure></p>
+<h2 id="文件查找"><a href="#文件查找" class="headerlink" title="文件查找"></a>文件查找</h2><p>例如我要查找当前目录及其子目录的所有png图片<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep .png . -r -n -o</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -373,7 +360,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/find/" rel="tag"># find</a>
+            <a href="/tags/grep/" rel="tag"># grep</a>
           
         </div>
       
@@ -386,15 +373,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/07/22/find-的使用/" rel="next" title="find 的使用">
+                <i class="fa fa-chevron-left"></i> find 的使用
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/22/grep/" rel="prev" title="grep(常用)">
-                grep(常用) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -515,7 +502,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#find-and-sed"><span class="nav-number">1.</span> <span class="nav-text">find and sed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tee-额外"><span class="nav-number">2.</span> <span class="nav-text">tee(额外)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常规"><span class="nav-number">1.</span> <span class="nav-text">常规</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep的正则表达式"><span class="nav-number">2.</span> <span class="nav-text">grep的正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件查找"><span class="nav-number">3.</span> <span class="nav-text">文件查找</span></a></li></ol></div>
             
 
           </div>
