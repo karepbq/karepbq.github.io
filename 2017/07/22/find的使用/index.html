@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="find," />
 
 
 
@@ -93,12 +93,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kare&#39;note">
-<meta property="og:url" content="http://www.karepbq.com/index.html">
+<meta name="description" content="find使用find使我们经常使用的一个命令，也是很简单的一个命令。学习他，有利于提供我们的工作效率哦。（着一片文章记载的，有一些是和上一章文章中的grep,结合使用的） 比如：我要查找一首MP3,名字叫：末班车的歌曲1find . -name &quot;*.mp3&quot; | grep -i 末班车 其中|的作用是，把find查找的结果传递给后面的命令使用。 例如：查找mp3，但是不要出现”kugou”  “">
+<meta name="keywords" content="find">
+<meta property="og:type" content="article">
+<meta property="og:title" content="find 的使用">
+<meta property="og:url" content="http://www.karepbq.com/2017/07/22/find的使用/index.html">
 <meta property="og:site_name" content="Kare&#39;note">
+<meta property="og:description" content="find使用find使我们经常使用的一个命令，也是很简单的一个命令。学习他，有利于提供我们的工作效率哦。（着一片文章记载的，有一些是和上一章文章中的grep,结合使用的） 比如：我要查找一首MP3,名字叫：末班车的歌曲1find . -name &quot;*.mp3&quot; | grep -i 末班车 其中|的作用是，把find查找的结果传递给后面的命令使用。 例如：查找mp3，但是不要出现”kugou”  “">
+<meta property="og:updated_time" content="2017-07-22T00:34:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kare&#39;note">
+<meta name="twitter:title" content="find 的使用">
+<meta name="twitter:description" content="find使用find使我们经常使用的一个命令，也是很简单的一个命令。学习他，有利于提供我们的工作效率哦。（着一片文章记载的，有一些是和上一章文章中的grep,结合使用的） 比如：我要查找一首MP3,名字叫：末班车的歌曲1find . -name &quot;*.mp3&quot; | grep -i 末班车 其中|的作用是，把find查找的结果传递给后面的命令使用。 例如：查找mp3，但是不要出现”kugou”  “">
 
 
 
@@ -126,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://www.karepbq.com/"/>
+  <link rel="canonical" href="http://www.karepbq.com/2017/07/22/find的使用/"/>
 
 
 
 
 
-  <title>Kare'note</title>
+  <title>find 的使用 | Kare'note</title>
   
 
 
@@ -157,9 +162,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -242,131 +245,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.karepbq.com/2017/07/22/grep/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kare">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kare'note">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/22/grep/" itemprop="url">grep(常用)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-22T08:15:13+08:00">
-                2017-07-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>grep是一个很大的命令，可以搜索文件，也可以搜索一个文本内的字符，使用过的人相信一定会喜欢上她 ^_^。</p>
-<h2 id="常规"><a href="#常规" class="headerlink" title="常规"></a>常规</h2><p>先简单介绍几个常用的参数。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">-i (ignore-case) 忽略大小写</div><div class="line"></div><div class="line">-n (line-number) 显示行号</div><div class="line"></div><div class="line">-c (count) 统计次数</div><div class="line"></div><div class="line">-r 递归查找</div><div class="line"></div><div class="line">-o 只显示查找到的项</div><div class="line"></div><div class="line">-v 反转查找</div><div class="line"></div><div class="line">-W 精确查找</div></pre></td></tr></table></figure></p>
-<p>比如我现在要查找Pay.h里面’pay’字符出现了多少次。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -c <span class="string">"pay"</span></div></pre></td></tr></table></figure></p>
-<p>再如，我查找一个文件里面的字符‘pay’,不管大小都统计出来<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -c -i <span class="string">"pay"</span></div></pre></td></tr></table></figure></p>
-<p>如果要显示行号，那么加上<code>-n</code>即可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"pay"</span></div></pre></td></tr></table></figure></p>
-<p>例如：我要查找不是以#开始的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -v <span class="string">"#"</span></div></pre></td></tr></table></figure></p>
-<p>例如：我要查找”inet”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ifconfig | grep -w <span class="string">"inet"</span></div></pre></td></tr></table></figure></p>
-<h2 id="grep的正则表达式"><a href="#grep的正则表达式" class="headerlink" title="grep的正则表达式"></a>grep的正则表达式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="string">"^"</span> 锚定行的开始 如：<span class="string">'^typedef'</span>匹配所有以typedef开头的行。</div><div class="line"></div><div class="line"><span class="string">"$"</span> 锚定行的结束 如：<span class="string">'typedef$'</span>匹配所有以typedef结尾的行。</div></pre></td></tr></table></figure>
-<p>例如：查找所有以##开头的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"^##"</span></div></pre></td></tr></table></figure></p>
-<p>例如：查找文件里，所有以逗号结束的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"。$"</span></div></pre></td></tr></table></figure></p>
-<h2 id="文件查找"><a href="#文件查找" class="headerlink" title="文件查找"></a>文件查找</h2><p>例如我要查找当前目录及其子目录的所有png图片<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep .png . -r -n -o</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
 
   
 
@@ -392,9 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/22/find的使用/" itemprop="url">find 的使用</a></h1>
+          <h1 class="post-title" itemprop="name headline">find 的使用</h1>
         
 
         <div class="post-meta">
@@ -441,9 +320,7 @@
       
 
       
-        
-          
-            <p>find使用<br>find使我们经常使用的一个命令，也是很简单的一个命令。学习他，有利于提供我们的工作效率哦。（着一片文章记载的，有一些是和上一章文章中的<code>grep</code>,结合使用的）</p>
+        <p>find使用<br>find使我们经常使用的一个命令，也是很简单的一个命令。学习他，有利于提供我们的工作效率哦。（着一片文章记载的，有一些是和上一章文章中的<code>grep</code>,结合使用的）</p>
 <p>比如：我要查找一首MP3,名字叫：末班车的歌曲<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.mp3"</span> | grep -i 末班车</div></pre></td></tr></table></figure></p>
 <p>其中<code>|</code>的作用是，把find查找的结果传递给后面的命令使用。</p>
 <p>例如：查找mp3，但是不要出现”kugou”  “timedo” “time do” “shuangyue” “网易” “PomodoroWorks” “番茄” 这些字样，意思为，不要显示这些文件目录中的mp3。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.mp3"</span> | grep -v -i <span class="string">'kugou\|timedo\|time do\|shuangyue\|网易\|PomodoroWorks\|番茄’</span></div></pre></td></tr></table></figure></p>
@@ -468,42 +345,72 @@
 <p>意思为将ls显示的结果写到out.txt文件中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls | tee out.txt</div></pre></td></tr></table></figure></p>
 <p>意思为将ls显示的结果写到out.txt文件中,并显示行号<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls | tee out.txt | cat -n</div></pre></td></tr></table></figure></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/find/" rel="tag"># find</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/22/grep/" rel="prev" title="grep(常用)">
+                grep(常用) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -511,6 +418,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -531,8 +442,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -596,6 +516,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#find-and-sed"><span class="nav-number">1.</span> <span class="nav-text">find and sed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tee-额外"><span class="nav-number">2.</span> <span class="nav-text">tee(额外)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -716,10 +652,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
