@@ -93,12 +93,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kare&#39;note">
-<meta property="og:url" content="http://www.karepbq.com/tags/grep-find/index.html">
+<meta name="description" content="Git 使我们经常在项目中使用的版本管理工具之一，初次使用删除远程分支的命令感到很奇怪，命令是这样的：1git push origin :topic topic 是我的一个分支， git 推送远程分支格式：1git  push origin &amp;lt;src&amp;gt;:&amp;lt;dst&amp;gt; git 推送远程分支示例命令:1git push origin master:topic 意思为：将 mast">
+<meta property="og:type" content="article">
+<meta property="og:title" content="删除远程分支命令解读">
+<meta property="og:url" content="http://www.karepbq.com/2017/10/19/删除远程分支命令解读/index.html">
 <meta property="og:site_name" content="Kare&#39;note">
+<meta property="og:description" content="Git 使我们经常在项目中使用的版本管理工具之一，初次使用删除远程分支的命令感到很奇怪，命令是这样的：1git push origin :topic topic 是我的一个分支， git 推送远程分支格式：1git  push origin &amp;lt;src&amp;gt;:&amp;lt;dst&amp;gt; git 推送远程分支示例命令:1git push origin master:topic 意思为：将 mast">
+<meta property="og:updated_time" content="2017-10-19T06:35:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kare&#39;note">
+<meta name="twitter:title" content="删除远程分支命令解读">
+<meta name="twitter:description" content="Git 使我们经常在项目中使用的版本管理工具之一，初次使用删除远程分支的命令感到很奇怪，命令是这样的：1git push origin :topic topic 是我的一个分支， git 推送远程分支格式：1git  push origin &amp;lt;src&amp;gt;:&amp;lt;dst&amp;gt; git 推送远程分支示例命令:1git push origin master:topic 意思为：将 mast">
 
 
 
@@ -126,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://www.karepbq.com/tags/grep-find/"/>
+  <link rel="canonical" href="http://www.karepbq.com/2017/10/19/删除远程分支命令解读/"/>
 
 
 
 
 
-  <title>Tag: grep find | Kare'note</title>
+  <title>删除远程分支命令解读 | Kare'note</title>
   
 
 
@@ -157,7 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -198,7 +202,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -208,17 +212,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
+            Archiv
           </a>
         </li>
       
@@ -241,44 +235,152 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>grep find<small>Tag</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.karepbq.com/2017/10/19/删除远程分支命令解读/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kare">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kare'note">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">删除远程分支命令解读</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-19T14:08:55+08:00">
+                2017-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>Git 使我们经常在项目中使用的版本管理工具之一，初次使用删除远程分支的命令感到很奇怪，命令是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin :topic</div></pre></td></tr></table></figure></p>
+<p><code>topic</code> 是我的一个分支，</p>
+<p>git 推送远程分支格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git  push origin &lt;src&gt;:&lt;dst&gt;</div></pre></td></tr></table></figure></p>
+<p>git 推送远程分支示例命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin master:topic</div></pre></td></tr></table></figure></p>
+<p>意思为：将 master 内容推送到 topic 分支上</p>
+<p>如果用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin :topic</div></pre></td></tr></table></figure></p>
+<p>因为<code>推送远程分支</code>的格式是 <code>git  push origin &lt;src&gt;:&lt;dst&gt;</code>, 通过把 <src> 部分留空的方式，这个意思是是把远程的 topic 分支变成空，也就是删除它。</src></p>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/07/22/grep/" itemprop="url">
-              
-                <span itemprop="name">grep(常用)</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-22T08:15:13+08:00"
-              content="2017-07-22" >
-          07-22
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/28/Protocol-buffer-for-iOS/" rel="next" title="Protocol buffer for iOS">
+                <i class="fa fa-chevron-left"></i> Protocol buffer for iOS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/19/pull和fetch的区别/" rel="prev" title="pull和fetch的区别">
+                pull和fetch的区别 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -286,6 +388,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -322,8 +428,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -335,8 +441,8 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">Tags</span>
               
             </div>
           
@@ -346,6 +452,26 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://itrufeng.com" target="_blank" title="Zhang">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhang
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.aladdinnet.com" target="_blank" title="DickerYang">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  DickerYang
+                </a>
+              </span>
+            
           
         </div>
 
@@ -386,7 +512,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
@@ -480,10 +606,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
