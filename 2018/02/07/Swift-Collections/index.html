@@ -1,4 +1,131 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>  · Kare'note</title><meta name="description" content=" - Kare"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://www.karepbq.com/atom.xml" title="Kare'note"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title"></h1><div class="post-info">Feb 7, 2018</div><div class="post-content"><h2 id="Swift-Collection"><a href="#Swift-Collection" class="headerlink" title="Swift Collection"></a>Swift Collection</h2><p>使用 <strong>Map</strong>, <strong>filter</strong>, <strong>reduce</strong> 对 swift 集合进行操作。</p>
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Kare'note">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://www.karepbq.com/2018/02/07/Swift-Collections/"/>
+
+
+<meta name="description" content="Swift Collection使用 Map, filter, reduce 对 swift 集合进行操作。 使用我们熟悉的 for-in 循环也是可以达到目的的，但是如果你掌握了这些特性，将会是你更方便对集合进行操作，是代码更加简洁。 Map使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果. 使用原来的方法 for - in 方法 12345let values">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kare&#39;note">
+<meta property="og:url" content="http://www.karepbq.com/2018/02/07/Swift-Collections/index.html">
+<meta property="og:site_name" content="Kare&#39;note">
+<meta property="og:description" content="Swift Collection使用 Map, filter, reduce 对 swift 集合进行操作。 使用我们熟悉的 for-in 循环也是可以达到目的的，但是如果你掌握了这些特性，将会是你更方便对集合进行操作，是代码更加简洁。 Map使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果. 使用原来的方法 for - in 方法 12345let values">
+<meta property="og:image" content="http://www.karepbq.com/2018/02/07/Swift-Collections/images/map.png">
+<meta property="og:image" content="http://www.karepbq.com/2018/02/07/Swift-Collections/images/code.png">
+<meta property="og:image" content="http://www.karepbq.com/2018/02/07/Swift-Collections/images/filter.png">
+<meta property="og:image" content="http://www.karepbq.com/2018/02/07/Swift-Collections/images/reduce.png">
+<meta property="og:updated_time" content="2018-02-07T12:20:32.058Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kare&#39;note">
+<meta name="twitter:description" content="Swift Collection使用 Map, filter, reduce 对 swift 集合进行操作。 使用我们熟悉的 for-in 循环也是可以达到目的的，但是如果你掌握了这些特性，将会是你更方便对集合进行操作，是代码更加简洁。 Map使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果. 使用原来的方法 for - in 方法 12345let values">
+<meta name="twitter:image" content="http://www.karepbq.com/2018/02/07/Swift-Collections/images/map.png">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+    <title>  - Kare'note </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Kare'note</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          
+        
+      </h1>
+
+      <time class="post-time">
+          Feb 7 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h2 id="Swift-Collection"><a href="#Swift-Collection" class="headerlink" title="Swift Collection"></a>Swift Collection</h2><p>使用 <strong>Map</strong>, <strong>filter</strong>, <strong>reduce</strong> 对 swift 集合进行操作。</p>
 <p>使用我们熟悉的 for-in 循环也是可以达到目的的，但是如果你掌握了这些特性，将会是你更方便对集合进行操作，是代码更加简洁。</p>
 <h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><h4 id="使用-map-遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果"><a href="#使用-map-遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果" class="headerlink" title="使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果."></a>使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果.</h4><p><img src="images/map.png" width="300" height="300"></p>
 <p>使用原来的方法 for - in 方法</p>
@@ -47,4 +174,52 @@
 <li><p><code>reduce</code> 通过调用每个项目的组合闭包以初始值返回单个值。</p>
 </li>
 </ul>
-</div></article></div></main><footer><div class="paginator"><a href="/2017/10/19/pull和fetch的区别/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2018 <a href="http://www.karepbq.com">Kare</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2018
+    <span class="footer-author">Kare.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

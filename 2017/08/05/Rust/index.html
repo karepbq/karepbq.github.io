@@ -1,4 +1,131 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Rust · Kare'note</title><meta name="description" content="Rust - Kare"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://www.karepbq.com/atom.xml" title="Kare'note"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Rust</h1><div class="post-info">Aug 5, 2017</div><div class="post-content"><p>Rust 是一个注重安全与速度的现代系统编程语言。</p>
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Rust"/>
+
+
+
+
+  <meta name="keywords" content="Rust," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Kare'note">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://www.karepbq.com/2017/08/05/Rust/"/>
+
+
+<meta name="description" content="Rust 是一个注重安全与速度的现代系统编程语言。 过多的不说了，本章说说如何安装环境，并运行第一个 Hello, Rust Rust官方地址中文资料  Rust中文资料 Rust中文资料  安装1在 iTerm2 中运行：sudo /usr/local/lib/rustlib/uninstall.sh 然后1234$ mkdir ~/projects$ cd ~/projects$ mkdir">
+<meta name="keywords" content="Rust">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rust">
+<meta property="og:url" content="http://www.karepbq.com/2017/08/05/Rust/index.html">
+<meta property="og:site_name" content="Kare&#39;note">
+<meta property="og:description" content="Rust 是一个注重安全与速度的现代系统编程语言。 过多的不说了，本章说说如何安装环境，并运行第一个 Hello, Rust Rust官方地址中文资料  Rust中文资料 Rust中文资料  安装1在 iTerm2 中运行：sudo /usr/local/lib/rustlib/uninstall.sh 然后1234$ mkdir ~/projects$ cd ~/projects$ mkdir">
+<meta property="og:updated_time" content="2017-08-04T16:52:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rust">
+<meta name="twitter:description" content="Rust 是一个注重安全与速度的现代系统编程语言。 过多的不说了，本章说说如何安装环境，并运行第一个 Hello, Rust Rust官方地址中文资料  Rust中文资料 Rust中文资料  安装1在 iTerm2 中运行：sudo /usr/local/lib/rustlib/uninstall.sh 然后1234$ mkdir ~/projects$ cd ~/projects$ mkdir">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+    <title> Rust - Kare'note </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Kare'note</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Rust
+        
+      </h1>
+
+      <time class="post-time">
+          Aug 5 2017
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>Rust 是一个注重安全与速度的现代系统编程语言。</p>
 <p>过多的不说了，本章说说如何安装环境，并运行第一个 <code>Hello, Rust</code></p>
 <h3 id="Rust官方地址"><a href="#Rust官方地址" class="headerlink" title="Rust官方地址"></a><a href="https://www.rust-lang.org/en-US/install.html" target="_blank" rel="external">Rust官方地址</a></h3><p>中文资料</p>
 <ul>
@@ -11,4 +138,86 @@
 <p>然后</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rustc hello_world.rs</div><div class="line">$ ./main</div></pre></td></tr></table></figure>
 <p>之后就会出现<code>Hello, world</code></p>
-</div></article></div></main><footer><div class="paginator"><a href="/2017/08/28/Protocol-buffer-for-iOS/" class="prev">PREV</a><a href="/2017/07/22/grep/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2018 <a href="http://www.karepbq.com">Kare</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Rust/">Rust</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/08/28/Protocol-buffer-for-iOS/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Protocol buffer for iOS</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/07/22/grep/">
+        <span class="next-text nav-default">grep(常用)</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2018
+    <span class="footer-author">Kare.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
