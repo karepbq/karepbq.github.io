@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Kare&#39;note</title>
+  
+  <subtitle>杂记</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.karepbq.com/"/>
+  <updated>2018-02-07T12:20:32.058Z</updated>
+  <id>http://www.karepbq.com/</id>
+  
+  <author>
+    <name>Kare</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://www.karepbq.com/2018/02/07/Swift-Collections/"/>
+    <id>http://www.karepbq.com/2018/02/07/Swift-Collections/</id>
+    <published>2018-02-07T12:20:32.057Z</published>
+    <updated>2018-02-07T12:20:32.058Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Swift-Collection"><a href="#Swift-Collection" class="headerlink" title="Swift Collection"></a>Swift Collection</h2><p>使用 <strong>Map</strong>, <strong>filter</strong>, <strong>reduce</strong> 对 swift 集合进行操作。</p><p>使用我们熟悉的 for-in 循环也是可以达到目的的，但是如果你掌握了这些特性，将会是你更方便对集合进行操作，是代码更加简洁。</p><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><h4 id="使用-map-遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果"><a href="#使用-map-遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果" class="headerlink" title="使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果."></a>使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果.</h4><p><img src="images/map.png" width="300" height="300"></p><p>使用原来的方法 for - in 方法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let values = [2.0, 4.0, 6.0, 8.0]</div><div class="line">var result: [Double] = []</div><div class="line">for value in values &#123;</div><div class="line">result.append(value*value)</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>使用 <code>map</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let values = [2.0, 4.0, 6.0, 8.0]</div><div class="line">let result = values.map &#123; $0 * $0 &#125;</div></pre></td></tr></table></figure><p>解说：</p><p><code>map</code>函数有一个参数，是一个闭包函数，在循环集合是调用它，这个闭包将集合的元素作为参数，并返回结果。map将这些结果放回到一个数组中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let values = [2.0, 4.0, 6.0, 8.0]</div><div class="line">let result = values.map &#123; (value) -&gt; Double in</div><div class="line">return value * value</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>代码还可以简化成这样</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let values = [2.0, 4.0, 6.0, 8.0]</div><div class="line">let result = values.map &#123; value in</div><div class="line">return value * value</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>甚至我们可以省略 return<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let values = [2.0, 4.0, 6.0, 8.0]</div><div class="line">let result = values.map &#123; value in</div><div class="line">value * value</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p><code>in</code> 关键字将参数从闭包体中分离出来。最后可以写成这样</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let values = [2.0, 4.0, 6.0, 8.0]</div><div class="line">let result = values.map &#123; $0 * $0 &#125;</div></pre></td></tr></table></figure><p><strong>结果的类型不限于原始数据的类型，</strong>下面这个是将整个类型映射到字符串类型</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let numbers: [NSNumber] = [0, 4, 10]</div><div class="line">let words = values.map &#123;</div><div class="line">NumberFormatter.localizedString(from: $0, number: .spellOut)</div><div class="line">&#125;</div><div class="line">//  [&quot;zero&quot;, &quot;four&quot;, &quot;one hundred&quot;]</div></pre></td></tr></table></figure><p><code>map</code> 不仅仅能操作数组，它也可以操作字典，然后返回一个数组**</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let dic = [&quot;price&quot;: 100, &quot;price2&quot;: 200]</div><div class="line">let result = dic.map &#123; $0.value * 10 &#125;</div><div class="line">// [1000, 2000]</div></pre></td></tr></table></figure><p>如果你不知道闭包的参数类型，Xcode是会给与提示的，<strong>快速提示</strong>可以让你更明白参数到底是什么类型。</p><p><img src="images/code.png" width="500"></p><p><strong>可以同时给如 Int 和 Double, map 会返回一个 Double 类型的数组</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let values: Set = [2.0, 4.0, 8, 10]</div><div class="line"></div><div class="line">let result = values.map &#123; $0 * 3.14159 &#125;</div><div class="line"></div><div class="line">// [6.2831799999999998, 12.56636, 25.132719999999999, 31.415900000000001]</div></pre></td></tr></table></figure><h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><h4 id="使用filter，-会筛选符合条件的数据，匹配的数据包括进含有这些元素"><a href="#使用filter，-会筛选符合条件的数据，匹配的数据包括进含有这些元素" class="headerlink" title="使用filter， 会筛选符合条件的数据，匹配的数据包括进含有这些元素"></a>使用filter， 会筛选符合条件的数据，匹配的数据包括进含有这些元素</h4><p><code>filter</code> 有一个指定包含条件的参数，这事一个闭包，他讲来自集合的元素作</p><p>为参数，他会返回一个 <code>Bool</code> 值。</p><p><img src="images/filter.png" width="300" height="300"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let values: [Double] = [1.0, 2.0, 4.0, 11.0]</div><div class="line">let result = values.filter &#123; $0.truncatingRemainder(dividingBy: 2) == 0 &#125;</div><div class="line">// [2.0, 4.0]</div></pre></td></tr></table></figure><h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><h4 id="使用-reduce-，可以集合中的所有项目合并来创建一个新值。"><a href="#使用-reduce-，可以集合中的所有项目合并来创建一个新值。" class="headerlink" title="使用 reduce ，可以集合中的所有项目合并来创建一个新值。"></a>使用 reduce ，可以集合中的所有项目合并来创建一个新值。</h4><p><code>reduce</code> 有<code>两个</code>值，一个<code>初始化值</code>，一个<code>闭包值</code>。</p><p><img src="images/reduce.png" width="300" height="300"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let values: [Double] = [1.0, 4.0, 6.0, 11.0]</div><div class="line"></div><div class="line">let result = values.reduce(10) &#123; $0 + $1&#125;</div></pre></td></tr></table></figure><p><strong>初始化值：10  结果：32</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let values: [Double] = [1.0, 4.0, 6.0, 11.0]</div><div class="line">let result = values.reduce(0) &#123; $0 + $1&#125;</div></pre></td></tr></table></figure></p><p><strong><strong>初始化值：0  结果：22</strong></strong></p><p><strong>使用 reduce 可以连接字符串</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let values = [&quot;致&quot;, &quot;技&quot;, &quot;术&quot;, &quot;公众号&quot;]</div><div class="line">let result = values.reduce(&quot;&quot;) &#123; $0 + $1&#125;</div><div class="line">// 致技术公众号</div></pre></td></tr></table></figure><h3 id="FlatMap"><a href="#FlatMap" class="headerlink" title="FlatMap"></a>FlatMap</h3><h4 id="flatMap-可以将一个一系列的集合，平铺开来。"><a href="#flatMap-可以将一个一系列的集合，平铺开来。" class="headerlink" title="flatMap 可以将一个一系列的集合，平铺开来。"></a>flatMap 可以将一个一系列的集合，平铺开来。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let values = [[1,2],[3,4],[5,6]]</div><div class="line">let result = values.flatMap &#123; $0 &#125;</div><div class="line">// [1, 2, 3, 4, 5, 6]</div></pre></td></tr></table></figure><p><code>flatMap</code> 可以去掉数组中 <code>nil</code> 的元素</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let values = [[1,2],[3,4],[5,6]]</div><div class="line">let result = values.flatMap &#123; $0 &#125;</div><div class="line">// [1, 2, 3, 4, 5, 6]</div></pre></td></tr></table></figure><p>对于在对一系列集合做平铺时，我们可以对结果进行筛选处理</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let values = [[1,2],[3,4],[5,6]]\</div><div class="line">let result = values.flatMap &#123;</div><div class="line">$0.filter&#123; $0%2==0 &#125;</div><div class="line">&#125;</div><div class="line">// [2, 4, 6]</div></pre></td></tr></table></figure><p>或者是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let values = [[1,2],[3,4],[5,6]]</div><div class="line">let result = values.flatMap &#123;</div><div class="line">$0.map&#123; $0*$0 &#125;</div><div class="line">&#125;</div><div class="line">// [1, 4, 9, 16, 25, 36]</div></pre></td></tr></table></figure></p><p>把一系列集合相加，最终的到一个值</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let values = [[1,2],[3,4],[5,6]]</div><div class="line">let result = values.map &#123; $0.reduce(0, &#123; $0 + $1&#125; )&#125;.reduce(0, &#123;$0 + $1&#125;)</div><div class="line">// 21</div></pre></td></tr></table></figure><h4 id="总结一哈："><a href="#总结一哈：" class="headerlink" title="总结一哈："></a>总结一哈：</h4><ul><li><p><code>map</code>返回一个<code>Array</code>包含将结果应用于每个项目的结果。</p></li><li><p><code>filter</code>返回<code>Array</code>仅包含与包含条件相匹配的项目。</p></li><li><p><code>reduce</code> 通过调用每个项目的组合闭包以初始值返回单个值。</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Swift-Collection&quot;&gt;&lt;a href=&quot;#Swift-Collection&quot; class=&quot;headerlink&quot; title=&quot;Swift Collection&quot;&gt;&lt;/a&gt;Swift Collection&lt;/h2&gt;&lt;p&gt;使用 &lt;strong&gt;Map
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>pull和fetch的区别</title>
+    <link href="http://www.karepbq.com/2017/10/19/pull%E5%92%8Cfetch%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://www.karepbq.com/2017/10/19/pull和fetch的区别/</id>
+    <published>2017-10-19T06:41:24.000Z</published>
+    <updated>2017-10-19T06:43:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>git pull和fetch的区别</p><p><code>git fetch origin</code> 会抓取从你上次克隆以来别人上传到此远程仓库中的所有更新（或是上次 fetch 以来别人提交的更新）。有一点很重要，需要记住，fetch 命令只是将<code>远端的数据拉到本地仓库，并不自动合并到当前工作分支</code>，只有当你确实准备好了，才能手工合并。</p><p><code>git pull</code> 命令自动抓取数据下来，然后将<code>远端分支自动合并到本地仓库中当前分支</code>。在日常工作中我们经常这么用，既快且好。实际上，默认情况下 git clone 命令本质上就是自动创建了本地的 master 分支用于跟踪远程仓库中的 master 分支（假设远程仓库确实有 master 分支）。所以一般我们运行 git pull，目的都是要从原始克隆的远端仓库中抓取数据后，合并到工作目录中的当前分支。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;git pull和fetch的区别&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git fetch origin&lt;/code&gt; 会抓取从你上次克隆以来别人上传到此远程仓库中的所有更新（或是上次 fetch 以来别人提交的更新）。有一点很重要，需要记住，fetch 命令只是将&lt;code&gt;远端的
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>删除远程分支命令解读</title>
+    <link href="http://www.karepbq.com/2017/10/19/%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E5%91%BD%E4%BB%A4%E8%A7%A3%E8%AF%BB/"/>
+    <id>http://www.karepbq.com/2017/10/19/删除远程分支命令解读/</id>
+    <published>2017-10-19T06:08:55.000Z</published>
+    <updated>2017-10-19T06:35:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Git 使我们经常在项目中使用的版本管理工具之一，初次使用删除远程分支的命令感到很奇怪，命令是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin :topic</div></pre></td></tr></table></figure></p><p><code>topic</code> 是我的一个分支，</p><p>git 推送远程分支格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git  push origin &lt;src&gt;:&lt;dst&gt;</div></pre></td></tr></table></figure></p><p>git 推送远程分支示例命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin master:topic</div></pre></td></tr></table></figure></p><p>意思为：将 master 内容推送到 topic 分支上</p><p>如果用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin :topic</div></pre></td></tr></table></figure></p><p>因为<code>推送远程分支</code>的格式是 <code>git  push origin &lt;src&gt;:&lt;dst&gt;</code>, 通过把 <src> 部分留空的方式，这个意思是是把远程的 topic 分支变成空，也就是删除它。</src></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Git 使我们经常在项目中使用的版本管理工具之一，初次使用删除远程分支的命令感到很奇怪，命令是这样的：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;lin
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Protocol buffer for iOS</title>
+    <link href="http://www.karepbq.com/2017/08/28/Protocol-buffer-for-iOS/"/>
+    <id>http://www.karepbq.com/2017/08/28/Protocol-buffer-for-iOS/</id>
+    <published>2017-08-28T09:19:25.000Z</published>
+    <updated>2017-08-28T11:56:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Protocol-buffer-简单简介"><a href="#Protocol-buffer-简单简介" class="headerlink" title="Protocol buffer 简单简介"></a>Protocol buffer 简单简介</h3><p>protocol buffer是Google发布的轻便高效的结构化数据存储格式，与平台无关，内部采用了特殊的算法，让数据包边的更小，如果在网络传输时，有可能你会用到它。<a href="https://developers.google.com/protocol-buffers/" target="_blank" rel="external">官方网址</a></p><h2 id="这里只讲如何引用-不讲过多代码"><a href="#这里只讲如何引用-不讲过多代码" class="headerlink" title="这里只讲如何引用, 不讲过多代码"></a>这里只讲如何引用, 不讲过多代码</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>可以参考这个文章，将的很详细。<a href="https://www.ibm.com/developerworks/cn/linux/l-cn-gpb/" target="_blank" rel="external">原理</a></p><h3 id="支持平台"><a href="#支持平台" class="headerlink" title="支持平台"></a>支持平台</h3><p>期初支持很少的平台，但是目前已经支持很多平台，诸如：Java, Object-c, Pythod, PHP 等。<br>具体可以在这里找到<a href="https://github.com/google/protobuf/releases" target="_blank" rel="external">支持平台</a>，当然<a href="https://github.com/google/protobuf" target="_blank" rel="external">git</a>项目的简介里面也会讲到支出的平台。</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>具体使用有两种方式</p><ol><li>使用CocoaPod, 具体操作可以看<a href="https://github.com/alexeyxo/protobuf-objc" target="_blank" rel="external">这里的文章</a>。</li><li>使用源码添加到项目</li></ol><p>我们着重讲一下，具体用代码的方式添加使用。</p><h3 id="Protoc-安装"><a href="#Protoc-安装" class="headerlink" title="Protoc 安装"></a>Protoc 安装</h3><p>在这之前我们需要安装一些工具包，这些工具包都是本地生产 Protoc 命令所要使用到的。在使用 protoc 生成文件之前，必须确保安装了以下工具包。不然就不会成功。具体安装命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">brew install automake</div><div class="line">brew install libtool</div><div class="line">brew install protobuf</div></pre></td></tr></table></figure><h3 id="具体生成-protoc"><a href="#具体生成-protoc" class="headerlink" title="具体生成 protoc"></a>具体生成 protoc</h3><p>去<a href="https://github.com/google/protobuf/releases" target="_blank" rel="external">官网</a>下载源码后，分别运行一下命令：<br><img src="images/protobufimg.png" alt="下载包截图"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">unzip protobuf-objectivec-3.4.0.zip</div><div class="line">cd protobuf-3.4.0</div><div class="line">./configure</div><div class="line">make</div><div class="line">make check</div><div class="line">sudo make install</div></pre></td></tr></table></figure><p>安装完毕，不出意外，在就可以在 iTerminal 里面打出 protoc<br>具体：<img src="images/protol.png" alt="protol图片"></p><h3 id="生产protocol文件"><a href="#生产protocol文件" class="headerlink" title="生产protocol文件"></a>生产protocol文件</h3><ol><li>创建 <code>.proto</code> 文件，具体格式数据类型要求可以参考 <a href="https://developers.google.com/protocol-buffers/docs/encoding" target="_blank" rel="external">encoding</a>  <code>[Note: proto3 和 proto2 规范是不同的]</code></li><li>这里我就创建了两个字段，文件名称为 <code>Person.proto</code><br><img src="images/protocolfield.png" alt="protocol field"></li><li>运行 <code>protoc --proto_path=. --objc_out=. Person.proto</code> 会生产两个文件 <code>Person.pbobjc.h</code> 和 <code>Person.pbobjc.m</code></li></ol><h3 id="项目引用"><a href="#项目引用" class="headerlink" title="项目引用"></a>项目引用</h3><ol><li><p>建立项目 ProtocolBF</p></li><li><p>在项目里面创建 ProtocloBufferFile 文件夹</p></li><li><p>把 protobuf-3.4.0/objectivec 下的全部内容复制到<br>ProtocloBufferFile 文件夹中 (你可以自行去掉Test部分，当然也可以不去掉，这取决于你)<br><img src="images/pro.png" alt="pro图片"></p></li><li><p>在项目里面添加文件 <img src="images/addpro1.png" alt="add file"></p></li><li><p>添加<code>libProtocolBuffers.a</code> <img src="images/addpro2.png" alt="add file"></p></li><li><p>添加<code>Header search paths</code><br><code>格式为：$(PROJECT)/存放protobuf文件的目录名称</code>，在这里是<code>ProtocloBufferFile</code>，也就是<code>$(PROJECT)/ProtocloBufferFile</code> <img src="images/addpro3.png" alt="add file"></p></li></ol><ol><li><p>然后添加生成的Person.pbobjc.* 文件以及 Person.proto 文件, 因为 他不支持Arc 所以的加上 <code>-fno-objc-arc</code><br><img src="images/addpro4.png" alt="add file"></p></li><li><p>然后编译成功。</p><h3 id="具体应用代码"><a href="#具体应用代码" class="headerlink" title="具体应用代码"></a>具体应用代码</h3><p>这里主要讲了引用，具体用法还得自己去研究哦！<br><img src="images/detailsimport.png" alt="add file"></p><p>代码<a href="https://github.com/karepbq/ProtocolBuffer" target="_blank" rel="external">Github</a></p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Protocol-buffer-简单简介&quot;&gt;&lt;a href=&quot;#Protocol-buffer-简单简介&quot; class=&quot;headerlink&quot; title=&quot;Protocol buffer 简单简介&quot;&gt;&lt;/a&gt;Protocol buffer 简单简介&lt;/h3&gt;&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Rust</title>
+    <link href="http://www.karepbq.com/2017/08/05/Rust/"/>
+    <id>http://www.karepbq.com/2017/08/05/Rust/</id>
+    <published>2017-08-04T16:32:25.000Z</published>
+    <updated>2017-08-04T16:52:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Rust 是一个注重安全与速度的现代系统编程语言。</p><p>过多的不说了，本章说说如何安装环境，并运行第一个 <code>Hello, Rust</code></p><h3 id="Rust官方地址"><a href="#Rust官方地址" class="headerlink" title="Rust官方地址"></a><a href="https://www.rust-lang.org/en-US/install.html" target="_blank" rel="external">Rust官方地址</a></h3><p>中文资料</p><ul><li><a href="http://www.uoota.com/blog/type/rust" target="_blank" rel="external">Rust中文资料</a></li><li><a href="http://rustbook.cn/content/README%20介绍.html" target="_blank" rel="external">Rust中文资料</a></li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在 iTerm2 中运行：sudo /usr/local/lib/rustlib/uninstall.sh</div></pre></td></tr></table></figure><p>然后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ mkdir ~/projects</div><div class="line">$ cd ~/projects</div><div class="line">$ mkdir hello_world</div><div class="line">$ cd hello_world</div></pre></td></tr></table></figure></p><p>创建一个以<code>.rs</code> 结尾的文件例如: hello_world.rs, 在里面添加文字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fn main() &#123;</div><div class="line">    println!(&quot;Hello, world!&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>然后</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rustc hello_world.rs</div><div class="line">$ ./main</div></pre></td></tr></table></figure><p>之后就会出现<code>Hello, world</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Rust 是一个注重安全与速度的现代系统编程语言。&lt;/p&gt;
+&lt;p&gt;过多的不说了，本章说说如何安装环境，并运行第一个 &lt;code&gt;Hello, Rust&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Rust官方地址&quot;&gt;&lt;a href=&quot;#Rust官方地址&quot; class=&quot;heade
+      
+    
+    </summary>
+    
+    
+      <category term="Rust" scheme="http://www.karepbq.com/tags/Rust/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>grep(常用)</title>
+    <link href="http://www.karepbq.com/2017/07/22/grep/"/>
+    <id>http://www.karepbq.com/2017/07/22/grep/</id>
+    <published>2017-07-22T00:15:13.000Z</published>
+    <updated>2017-07-22T00:34:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>grep是一个很大的命令，可以搜索文件，也可以搜索一个文本内的字符，使用过的人相信一定会喜欢上她 ^_^。</p><h2 id="常规"><a href="#常规" class="headerlink" title="常规"></a>常规</h2><p>先简单介绍几个常用的参数。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">-i (ignore-case) 忽略大小写</div><div class="line"></div><div class="line">-n (line-number) 显示行号</div><div class="line"></div><div class="line">-c (count) 统计次数</div><div class="line"></div><div class="line">-r 递归查找</div><div class="line"></div><div class="line">-o 只显示查找到的项</div><div class="line"></div><div class="line">-v 反转查找</div><div class="line"></div><div class="line">-W 精确查找</div></pre></td></tr></table></figure></p><p>比如我现在要查找Pay.h里面’pay’字符出现了多少次。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -c <span class="string">"pay"</span></div></pre></td></tr></table></figure></p><p>再如，我查找一个文件里面的字符‘pay’,不管大小都统计出来<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -c -i <span class="string">"pay"</span></div></pre></td></tr></table></figure></p><p>如果要显示行号，那么加上<code>-n</code>即可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"pay"</span></div></pre></td></tr></table></figure></p><p>例如：我要查找不是以#开始的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -v <span class="string">"#"</span></div></pre></td></tr></table></figure></p><p>例如：我要查找”inet”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ifconfig | grep -w <span class="string">"inet"</span></div></pre></td></tr></table></figure></p><h2 id="grep的正则表达式"><a href="#grep的正则表达式" class="headerlink" title="grep的正则表达式"></a>grep的正则表达式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="string">"^"</span> 锚定行的开始 如：<span class="string">'^typedef'</span>匹配所有以typedef开头的行。</div><div class="line"></div><div class="line"><span class="string">"$"</span> 锚定行的结束 如：<span class="string">'typedef$'</span>匹配所有以typedef结尾的行。</div></pre></td></tr></table></figure><p>例如：查找所有以##开头的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"^##"</span></div></pre></td></tr></table></figure></p><p>例如：查找文件里，所有以逗号结束的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"。$"</span></div></pre></td></tr></table></figure></p><h2 id="文件查找"><a href="#文件查找" class="headerlink" title="文件查找"></a>文件查找</h2><p>例如我要查找当前目录及其子目录的所有png图片<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep .png . -r -n -o</div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;grep是一个很大的命令，可以搜索文件，也可以搜索一个文本内的字符，使用过的人相信一定会喜欢上她 ^_^。&lt;/p&gt;
+&lt;h2 id=&quot;常规&quot;&gt;&lt;a href=&quot;#常规&quot; class=&quot;headerlink&quot; title=&quot;常规&quot;&gt;&lt;/a&gt;常规&lt;/h2&gt;&lt;p&gt;先简单介绍几个常用
+      
+    
+    </summary>
+    
+    
+      <category term="grep" scheme="http://www.karepbq.com/tags/grep/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>find 的使用</title>
+    <link href="http://www.karepbq.com/2017/07/22/find%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://www.karepbq.com/2017/07/22/find的使用/</id>
+    <published>2017-07-21T23:22:36.000Z</published>
+    <updated>2017-07-22T00:34:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>find使用<br>find使我们经常使用的一个命令，也是很简单的一个命令。学习他，有利于提供我们的工作效率哦。（着一片文章记载的，有一些是和上一章文章中的<code>grep</code>,结合使用的）</p><p>比如：我要查找一首MP3,名字叫：末班车的歌曲<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.mp3"</span> | grep -i 末班车</div></pre></td></tr></table></figure></p><p>其中<code>|</code>的作用是，把find查找的结果传递给后面的命令使用。</p><p>例如：查找mp3，但是不要出现”kugou”  “timedo” “time do” “shuangyue” “网易” “PomodoroWorks” “番茄” 这些字样，意思为，不要显示这些文件目录中的mp3。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.mp3"</span> | grep -v -i <span class="string">'kugou\|timedo\|time do\|shuangyue\|网易\|PomodoroWorks\|番茄’</span></div></pre></td></tr></table></figure></p><p>上面这个等同于<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.mp3"</span> | egrep -v -i <span class="string">'kugou|timedo|time do|shuangyue|网易|PomodoroWorks|番茄'</span></div></pre></td></tr></table></figure></p><p>例如:我想在一条grep命令中查找‘linuxtechi’和‘root’单词，使用<code>-e</code>参数，我们可以查找多个模式。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep -e <span class="string">"linuxtechi"</span> -e <span class="string">"root"</span> /etc/passwd</div></pre></td></tr></table></figure></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-<span class="built_in">type</span> 只寻找符号指定的文件类型的文件</div><div class="line"></div><div class="line">-f 普通文件</div><div class="line"></div><div class="line">-i 忽略大小写</div><div class="line"></div><div class="line">-o 多个文件一起查找</div></pre></td></tr></table></figure><p>查找“tecmint.txt” 然后删除掉<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -<span class="built_in">type</span> f -name <span class="string">"tecmint.txt"</span> -<span class="built_in">exec</span> rm -f &#123;&#125; \;</div></pre></td></tr></table></figure></p><p>查找以”.txt”结尾的文件，然后全部删除掉<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -<span class="built_in">type</span> f -name <span class="string">"*.txt"</span> -<span class="built_in">exec</span> rm -f &#123;&#125; \;</div></pre></td></tr></table></figure></p><p>忽略大小写查找<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -iname <span class="string">"*.txt"</span></div></pre></td></tr></table></figure></p><p>当前目录及其子目录查找所有以.txt 和 .pdf结尾的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name “*.txt” -o -name “*.pdf”</div></pre></td></tr></table></figure></p><p>在工作中，经常遇到要把查到的东西写入到一个文件中，可以使用这个命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Find . -<span class="built_in">type</span> f -name “*.txt” -<span class="built_in">exec</span> cat &#123;&#125; \;&gt;out.txt</div></pre></td></tr></table></figure></p><p>等同于<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.txt"</span> | tee out.txt</div></pre></td></tr></table></figure></p><p>把查到的文件cp到另一个目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -<span class="built_in">type</span> f -name <span class="string">"*.mp3"</span> -<span class="built_in">exec</span> cp &#123;&#125; /Users/kare/Desktop \;</div></pre></td></tr></table></figure></p><h2 id="find-and-sed"><a href="#find-and-sed" class="headerlink" title="find and sed"></a>find and sed</h2><p>sed 格式如下<br>sed -i “.文件类型” “s/被替换之前的内容/要替换的内容/g”</p><p>使用 <code>-i</code> 才会写入文件</p><p>此命令用到了find，sed.这句的意思是查找当前目录及其子目录的.m文件，然后把</p><p>“@end -(BOOL)needInputView{ return NO; }”</p><p>改成</p><p>“-(BOOL)needInputView{ return NO; } @end”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.m"</span> -<span class="built_in">type</span> f | xargs sed -i <span class="string">".m"</span> <span class="string">"s/@end -(BOOL)needInputView&#123; return NO; &#125;/-(BOOL)needInputView&#123; return NO; &#125; @end /g”</span></div></pre></td></tr></table></figure></p><p>这句的意思是查找当前目录及其子目录的.m文件，然后找出文件中有“手动输入”字样的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.m"</span> -<span class="built_in">type</span> f | xargs grep -r <span class="string">"手动输入"</span></div></pre></td></tr></table></figure></p><h2 id="tee-额外"><a href="#tee-额外" class="headerlink" title="tee(额外)"></a>tee(额外)</h2><p>tee将数据重定向到文件中。</p><p>意思为将ls显示的结果写到out.txt文件中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls | tee out.txt</div></pre></td></tr></table></figure></p><p>意思为将ls显示的结果写到out.txt文件中,并显示行号<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls | tee out.txt | cat -n</div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;find使用&lt;br&gt;find使我们经常使用的一个命令，也是很简单的一个命令。学习他，有利于提供我们的工作效率哦。（着一片文章记载的，有一些是和上一章文章中的&lt;code&gt;grep&lt;/code&gt;,结合使用的）&lt;/p&gt;
+&lt;p&gt;比如：我要查找一首MP3,名字叫：末班车的歌曲&lt;br&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="find" scheme="http://www.karepbq.com/tags/find/"/>
+    
+  </entry>
+  
+</feed>

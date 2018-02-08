@@ -1,20 +1,25 @@
-extends partial/layout
-
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
-
-block container
-    include mixins/post
-    +post(page)
-
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
-
-block copyright
-    include partial/copyright
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> find 的使用 · Kare'note</title><meta name="description" content="find 的使用 - Kare"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://www.karepbq.com/atom.xml" title="Kare'note"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">find 的使用</h1><div class="post-info">Jul 22, 2017</div><div class="post-content"><p>find使用<br>find使我们经常使用的一个命令，也是很简单的一个命令。学习他，有利于提供我们的工作效率哦。（着一片文章记载的，有一些是和上一章文章中的<code>grep</code>,结合使用的）</p>
+<p>比如：我要查找一首MP3,名字叫：末班车的歌曲<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.mp3"</span> | grep -i 末班车</div></pre></td></tr></table></figure></p>
+<p>其中<code>|</code>的作用是，把find查找的结果传递给后面的命令使用。</p>
+<p>例如：查找mp3，但是不要出现”kugou”  “timedo” “time do” “shuangyue” “网易” “PomodoroWorks” “番茄” 这些字样，意思为，不要显示这些文件目录中的mp3。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.mp3"</span> | grep -v -i <span class="string">'kugou\|timedo\|time do\|shuangyue\|网易\|PomodoroWorks\|番茄’</span></div></pre></td></tr></table></figure></p>
+<p>上面这个等同于<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.mp3"</span> | egrep -v -i <span class="string">'kugou|timedo|time do|shuangyue|网易|PomodoroWorks|番茄'</span></div></pre></td></tr></table></figure></p>
+<p>例如:我想在一条grep命令中查找‘linuxtechi’和‘root’单词，使用<code>-e</code>参数，我们可以查找多个模式。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep -e <span class="string">"linuxtechi"</span> -e <span class="string">"root"</span> /etc/passwd</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-<span class="built_in">type</span> 只寻找符号指定的文件类型的文件</div><div class="line"></div><div class="line">-f 普通文件</div><div class="line"></div><div class="line">-i 忽略大小写</div><div class="line"></div><div class="line">-o 多个文件一起查找</div></pre></td></tr></table></figure>
+<p>查找“tecmint.txt” 然后删除掉<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -<span class="built_in">type</span> f -name <span class="string">"tecmint.txt"</span> -<span class="built_in">exec</span> rm -f &#123;&#125; \;</div></pre></td></tr></table></figure></p>
+<p>查找以”.txt”结尾的文件，然后全部删除掉<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -<span class="built_in">type</span> f -name <span class="string">"*.txt"</span> -<span class="built_in">exec</span> rm -f &#123;&#125; \;</div></pre></td></tr></table></figure></p>
+<p>忽略大小写查找<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -iname <span class="string">"*.txt"</span></div></pre></td></tr></table></figure></p>
+<p>当前目录及其子目录查找所有以.txt 和 .pdf结尾的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name “*.txt” -o -name “*.pdf”</div></pre></td></tr></table></figure></p>
+<p>在工作中，经常遇到要把查到的东西写入到一个文件中，可以使用这个命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Find . -<span class="built_in">type</span> f -name “*.txt” -<span class="built_in">exec</span> cat &#123;&#125; \;&gt;out.txt</div></pre></td></tr></table></figure></p>
+<p>等同于<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.txt"</span> | tee out.txt</div></pre></td></tr></table></figure></p>
+<p>把查到的文件cp到另一个目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -<span class="built_in">type</span> f -name <span class="string">"*.mp3"</span> -<span class="built_in">exec</span> cp &#123;&#125; /Users/kare/Desktop \;</div></pre></td></tr></table></figure></p>
+<h2 id="find-and-sed"><a href="#find-and-sed" class="headerlink" title="find and sed"></a>find and sed</h2><p>sed 格式如下<br>sed -i “.文件类型” “s/被替换之前的内容/要替换的内容/g”</p>
+<p>使用 <code>-i</code> 才会写入文件</p>
+<p>此命令用到了find，sed.这句的意思是查找当前目录及其子目录的.m文件，然后把</p>
+<p>“@end -(BOOL)needInputView{ return NO; }”</p>
+<p>改成</p>
+<p>“-(BOOL)needInputView{ return NO; } @end”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.m"</span> -<span class="built_in">type</span> f | xargs sed -i <span class="string">".m"</span> <span class="string">"s/@end -(BOOL)needInputView&#123; return NO; &#125;/-(BOOL)needInputView&#123; return NO; &#125; @end /g”</span></div></pre></td></tr></table></figure></p>
+<p>这句的意思是查找当前目录及其子目录的.m文件，然后找出文件中有“手动输入”字样的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name <span class="string">"*.m"</span> -<span class="built_in">type</span> f | xargs grep -r <span class="string">"手动输入"</span></div></pre></td></tr></table></figure></p>
+<h2 id="tee-额外"><a href="#tee-额外" class="headerlink" title="tee(额外)"></a>tee(额外)</h2><p>tee将数据重定向到文件中。</p>
+<p>意思为将ls显示的结果写到out.txt文件中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls | tee out.txt</div></pre></td></tr></table></figure></p>
+<p>意思为将ls显示的结果写到out.txt文件中,并显示行号<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls | tee out.txt | cat -n</div></pre></td></tr></table></figure></p>
+</div></article></div></main><footer><div class="paginator"><a href="/2017/07/22/grep/" class="prev">PREV</a></div><div class="copyright"><p>© 2015 - 2018 <a href="http://www.karepbq.com">Kare</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>

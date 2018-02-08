@@ -1,20 +1,50 @@
-extends partial/layout
-
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
-
-block container
-    include mixins/post
-    +post(page)
-
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
-
-block copyright
-    include partial/copyright
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>  · Kare'note</title><meta name="description" content=" - Kare"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://www.karepbq.com/atom.xml" title="Kare'note"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title"></h1><div class="post-info">Feb 7, 2018</div><div class="post-content"><h2 id="Swift-Collection"><a href="#Swift-Collection" class="headerlink" title="Swift Collection"></a>Swift Collection</h2><p>使用 <strong>Map</strong>, <strong>filter</strong>, <strong>reduce</strong> 对 swift 集合进行操作。</p>
+<p>使用我们熟悉的 for-in 循环也是可以达到目的的，但是如果你掌握了这些特性，将会是你更方便对集合进行操作，是代码更加简洁。</p>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><h4 id="使用-map-遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果"><a href="#使用-map-遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果" class="headerlink" title="使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果."></a>使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果.</h4><p><img src="images/map.png" width="300" height="300"></p>
+<p>使用原来的方法 for - in 方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let values = [2.0, 4.0, 6.0, 8.0]</div><div class="line">var result: [Double] = []</div><div class="line">for value in values &#123;</div><div class="line">result.append(value*value)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用 <code>map</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let values = [2.0, 4.0, 6.0, 8.0]</div><div class="line">let result = values.map &#123; $0 * $0 &#125;</div></pre></td></tr></table></figure>
+<p>解说：</p>
+<p><code>map</code>函数有一个参数，是一个闭包函数，在循环集合是调用它，这个闭包将集合的元素作为参数，并返回结果。map将这些结果放回到一个数组中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let values = [2.0, 4.0, 6.0, 8.0]</div><div class="line">let result = values.map &#123; (value) -&gt; Double in</div><div class="line">return value * value</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>代码还可以简化成这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let values = [2.0, 4.0, 6.0, 8.0]</div><div class="line">let result = values.map &#123; value in</div><div class="line">return value * value</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>甚至我们可以省略 return<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let values = [2.0, 4.0, 6.0, 8.0]</div><div class="line">let result = values.map &#123; value in</div><div class="line">value * value</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><code>in</code> 关键字将参数从闭包体中分离出来。最后可以写成这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let values = [2.0, 4.0, 6.0, 8.0]</div><div class="line">let result = values.map &#123; $0 * $0 &#125;</div></pre></td></tr></table></figure>
+<p><strong>结果的类型不限于原始数据的类型，</strong>下面这个是将整个类型映射到字符串类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let numbers: [NSNumber] = [0, 4, 10]</div><div class="line">let words = values.map &#123;</div><div class="line">NumberFormatter.localizedString(from: $0, number: .spellOut)</div><div class="line">&#125;</div><div class="line">//  [&quot;zero&quot;, &quot;four&quot;, &quot;one hundred&quot;]</div></pre></td></tr></table></figure>
+<p><code>map</code> 不仅仅能操作数组，它也可以操作字典，然后返回一个数组**</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let dic = [&quot;price&quot;: 100, &quot;price2&quot;: 200]</div><div class="line">let result = dic.map &#123; $0.value * 10 &#125;</div><div class="line">// [1000, 2000]</div></pre></td></tr></table></figure>
+<p>如果你不知道闭包的参数类型，Xcode是会给与提示的，<strong>快速提示</strong>可以让你更明白参数到底是什么类型。</p>
+<p><img src="images/code.png" width="500"></p>
+<p><strong>可以同时给如 Int 和 Double, map 会返回一个 Double 类型的数组</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let values: Set = [2.0, 4.0, 8, 10]</div><div class="line"></div><div class="line">let result = values.map &#123; $0 * 3.14159 &#125;</div><div class="line"></div><div class="line">// [6.2831799999999998, 12.56636, 25.132719999999999, 31.415900000000001]</div></pre></td></tr></table></figure>
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><h4 id="使用filter，-会筛选符合条件的数据，匹配的数据包括进含有这些元素"><a href="#使用filter，-会筛选符合条件的数据，匹配的数据包括进含有这些元素" class="headerlink" title="使用filter， 会筛选符合条件的数据，匹配的数据包括进含有这些元素"></a>使用filter， 会筛选符合条件的数据，匹配的数据包括进含有这些元素</h4><p><code>filter</code> 有一个指定包含条件的参数，这事一个闭包，他讲来自集合的元素作</p>
+<p>为参数，他会返回一个 <code>Bool</code> 值。</p>
+<p><img src="images/filter.png" width="300" height="300"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let values: [Double] = [1.0, 2.0, 4.0, 11.0]</div><div class="line">let result = values.filter &#123; $0.truncatingRemainder(dividingBy: 2) == 0 &#125;</div><div class="line">// [2.0, 4.0]</div></pre></td></tr></table></figure>
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><h4 id="使用-reduce-，可以集合中的所有项目合并来创建一个新值。"><a href="#使用-reduce-，可以集合中的所有项目合并来创建一个新值。" class="headerlink" title="使用 reduce ，可以集合中的所有项目合并来创建一个新值。"></a>使用 reduce ，可以集合中的所有项目合并来创建一个新值。</h4><p><code>reduce</code> 有<code>两个</code>值，一个<code>初始化值</code>，一个<code>闭包值</code>。</p>
+<p><img src="images/reduce.png" width="300" height="300"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let values: [Double] = [1.0, 4.0, 6.0, 11.0]</div><div class="line"></div><div class="line">let result = values.reduce(10) &#123; $0 + $1&#125;</div></pre></td></tr></table></figure>
+<p><strong>初始化值：10  结果：32</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let values: [Double] = [1.0, 4.0, 6.0, 11.0]</div><div class="line">let result = values.reduce(0) &#123; $0 + $1&#125;</div></pre></td></tr></table></figure></p>
+<p><strong><strong>初始化值：0  结果：22</strong></strong></p>
+<p><strong>使用 reduce 可以连接字符串</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let values = [&quot;致&quot;, &quot;技&quot;, &quot;术&quot;, &quot;公众号&quot;]</div><div class="line">let result = values.reduce(&quot;&quot;) &#123; $0 + $1&#125;</div><div class="line">// 致技术公众号</div></pre></td></tr></table></figure>
+<h3 id="FlatMap"><a href="#FlatMap" class="headerlink" title="FlatMap"></a>FlatMap</h3><h4 id="flatMap-可以将一个一系列的集合，平铺开来。"><a href="#flatMap-可以将一个一系列的集合，平铺开来。" class="headerlink" title="flatMap 可以将一个一系列的集合，平铺开来。"></a>flatMap 可以将一个一系列的集合，平铺开来。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let values = [[1,2],[3,4],[5,6]]</div><div class="line">let result = values.flatMap &#123; $0 &#125;</div><div class="line">// [1, 2, 3, 4, 5, 6]</div></pre></td></tr></table></figure>
+<p><code>flatMap</code> 可以去掉数组中 <code>nil</code> 的元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let values = [[1,2],[3,4],[5,6]]</div><div class="line">let result = values.flatMap &#123; $0 &#125;</div><div class="line">// [1, 2, 3, 4, 5, 6]</div></pre></td></tr></table></figure>
+<p>对于在对一系列集合做平铺时，我们可以对结果进行筛选处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let values = [[1,2],[3,4],[5,6]]\</div><div class="line">let result = values.flatMap &#123;</div><div class="line">$0.filter&#123; $0%2==0 &#125;</div><div class="line">&#125;</div><div class="line">// [2, 4, 6]</div></pre></td></tr></table></figure>
+<p>或者是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let values = [[1,2],[3,4],[5,6]]</div><div class="line">let result = values.flatMap &#123;</div><div class="line">$0.map&#123; $0*$0 &#125;</div><div class="line">&#125;</div><div class="line">// [1, 4, 9, 16, 25, 36]</div></pre></td></tr></table></figure></p>
+<p>把一系列集合相加，最终的到一个值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let values = [[1,2],[3,4],[5,6]]</div><div class="line">let result = values.map &#123; $0.reduce(0, &#123; $0 + $1&#125; )&#125;.reduce(0, &#123;$0 + $1&#125;)</div><div class="line">// 21</div></pre></td></tr></table></figure>
+<h4 id="总结一哈："><a href="#总结一哈：" class="headerlink" title="总结一哈："></a>总结一哈：</h4><ul>
+<li><p><code>map</code>返回一个<code>Array</code>包含将结果应用于每个项目的结果。</p>
+</li>
+<li><p><code>filter</code>返回<code>Array</code>仅包含与包含条件相匹配的项目。</p>
+</li>
+<li><p><code>reduce</code> 通过调用每个项目的组合闭包以初始值返回单个值。</p>
+</li>
+</ul>
+</div></article></div></main><footer><div class="paginator"><a href="/2017/10/19/pull和fetch的区别/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2018 <a href="http://www.karepbq.com">Kare</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
