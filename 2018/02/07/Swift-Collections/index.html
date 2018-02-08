@@ -12,8 +12,12 @@
 
 
 
+  <meta name="description" content="Swift Collections"/>
 
 
+
+
+  <meta name="keywords" content="Swift," />
 
 
 
@@ -31,20 +35,21 @@
 <link rel="canonical" href="http://www.karepbq.com/2018/02/07/Swift-Collections/"/>
 
 
-<meta name="description" content="Swift Collection使用 Map, filter, reduce 对 swift 集合进行操作。 使用我们熟悉的 for-in 循环也是可以达到目的的，但是如果你掌握了这些特性，将会是你更方便对集合进行操作，是代码更加简洁。 Map使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果. 使用原来的方法 for - in 方法 12345let values">
+<meta name="description" content="使用 Map, filter, reduce 对 swift 集合进行操作。 使用我们熟悉的 for-in 循环也是可以达到目的的，但是如果你掌握了这些特性，将会是你更方便对集合进行操作，是代码更加简洁。 Map使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果. 使用原来的方法 for - in 方法 12345let values = [2.0, 4.0, 6.">
+<meta name="keywords" content="Swift">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kare&#39;note">
+<meta property="og:title" content="Swift Collections">
 <meta property="og:url" content="http://www.karepbq.com/2018/02/07/Swift-Collections/index.html">
 <meta property="og:site_name" content="Kare&#39;note">
-<meta property="og:description" content="Swift Collection使用 Map, filter, reduce 对 swift 集合进行操作。 使用我们熟悉的 for-in 循环也是可以达到目的的，但是如果你掌握了这些特性，将会是你更方便对集合进行操作，是代码更加简洁。 Map使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果. 使用原来的方法 for - in 方法 12345let values">
+<meta property="og:description" content="使用 Map, filter, reduce 对 swift 集合进行操作。 使用我们熟悉的 for-in 循环也是可以达到目的的，但是如果你掌握了这些特性，将会是你更方便对集合进行操作，是代码更加简洁。 Map使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果. 使用原来的方法 for - in 方法 12345let values = [2.0, 4.0, 6.">
 <meta property="og:image" content="http://www.karepbq.com/2018/02/07/Swift-Collections/images/map.png">
 <meta property="og:image" content="http://www.karepbq.com/2018/02/07/Swift-Collections/images/code.png">
 <meta property="og:image" content="http://www.karepbq.com/2018/02/07/Swift-Collections/images/filter.png">
 <meta property="og:image" content="http://www.karepbq.com/2018/02/07/Swift-Collections/images/reduce.png">
-<meta property="og:updated_time" content="2018-02-07T12:20:32.058Z">
+<meta property="og:updated_time" content="2018-02-08T09:19:03.883Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kare&#39;note">
-<meta name="twitter:description" content="Swift Collection使用 Map, filter, reduce 对 swift 集合进行操作。 使用我们熟悉的 for-in 循环也是可以达到目的的，但是如果你掌握了这些特性，将会是你更方便对集合进行操作，是代码更加简洁。 Map使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果. 使用原来的方法 for - in 方法 12345let values">
+<meta name="twitter:title" content="Swift Collections">
+<meta name="twitter:description" content="使用 Map, filter, reduce 对 swift 集合进行操作。 使用我们熟悉的 for-in 循环也是可以达到目的的，但是如果你掌握了这些特性，将会是你更方便对集合进行操作，是代码更加简洁。 Map使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果. 使用原来的方法 for - in 方法 12345let values = [2.0, 4.0, 6.">
 <meta name="twitter:image" content="http://www.karepbq.com/2018/02/07/Swift-Collections/images/map.png">
 
 
@@ -75,7 +80,7 @@
   
 
 
-    <title>  - Kare'note </title>
+    <title> Swift Collections - Kare'note </title>
   </head>
 
   <body>
@@ -112,7 +117,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          
+          Swift Collections
         
       </h1>
 
@@ -125,7 +130,7 @@
 
     
             <div class="post-content">
-            <h2 id="Swift-Collection"><a href="#Swift-Collection" class="headerlink" title="Swift Collection"></a>Swift Collection</h2><p>使用 <strong>Map</strong>, <strong>filter</strong>, <strong>reduce</strong> 对 swift 集合进行操作。</p>
+            <p>使用 <strong>Map</strong>, <strong>filter</strong>, <strong>reduce</strong> 对 swift 集合进行操作。</p>
 <p>使用我们熟悉的 for-in 循环也是可以达到目的的，但是如果你掌握了这些特性，将会是你更方便对集合进行操作，是代码更加简洁。</p>
 <h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><h4 id="使用-map-遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果"><a href="#使用-map-遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果" class="headerlink" title="使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果."></a>使用 map 遍历，他会对数组中每个数据进行操作，返回一个数组，对应相应的变换结果.</h4><p><img src="images/map.png" width="300" height="300"></p>
 <p>使用原来的方法 for - in 方法</p>
@@ -178,6 +183,34 @@
             </div>
           
 
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Swift/">Swift</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2017/10/19/pull和fetch的区别/">
+        <span class="next-text nav-default">pull和fetch的区别</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
     
   </article>
 
