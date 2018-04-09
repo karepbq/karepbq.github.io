@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="">
+<html class="theme-next mist use-motion" lang="zh">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -83,7 +83,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Kare'note" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="TauRen" type="application/atom+xml" />
 
 
 
@@ -99,8 +99,9 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Protocol buffer for iOS">
 <meta property="og:url" content="http://www.karepbq.com/2017/08/28/Protocol-buffer-for-iOS/index.html">
-<meta property="og:site_name" content="Kare&#39;note">
+<meta property="og:site_name" content="TauRen">
 <meta property="og:description" content="Protocol buffer 简单简介protocol buffer是Google发布的轻便高效的结构化数据存储格式，与平台无关，内部采用了特殊的算法，让数据包边的更小，如果在网络传输时，有可能你会用到它。官方网址 这里只讲如何引用, 不讲过多代码原理可以参考这个文章，将的很详细。原理 支持平台期初支持很少的平台，但是目前已经支持很多平台，诸如：Java, Object-c, Pythod, P">
+<meta property="og:locale" content="zh">
 <meta property="og:image" content="http://www.karepbq.com/2017/08/28/Protocol-buffer-for-iOS/images/protobufimg.png">
 <meta property="og:image" content="http://www.karepbq.com/2017/08/28/Protocol-buffer-for-iOS/images/protol.png">
 <meta property="og:image" content="http://www.karepbq.com/2017/08/28/Protocol-buffer-for-iOS/images/protocolfield.png">
@@ -123,7 +124,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"right","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -148,7 +149,7 @@
 
 
 
-  <title>Protocol buffer for iOS | Kare'note</title>
+  <title>Protocol buffer for iOS | TauRen</title>
   
 
 
@@ -166,14 +167,14 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
 
   
   
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -184,7 +185,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Kare'note</span>
+        <span class="site-title">TauRen</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -210,7 +211,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/ || home" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -220,7 +221,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -230,7 +231,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/archives/ || archive" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -286,7 +287,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kare'note">
+      <meta itemprop="name" content="TauRen">
     </span>
 
     
@@ -319,6 +320,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/28/Protocol-buffer-for-iOS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/28/Protocol-buffer-for-iOS/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -456,6 +468,13 @@
           
   <div class="comments" id="comments">
     
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
   </div>
 
 
@@ -495,14 +514,14 @@
                alt="Kare" />
           <p class="site-author-name" itemprop="name">Kare</p>
            
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">个人开发杂记</p>
           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
-              <a href="/archives">
+              <a href="/archives/ || archive">
                 <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
@@ -694,6 +713,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://TauRen.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://www.karepbq.com/2017/08/28/Protocol-buffer-for-iOS/';
+          this.page.identifier = '2017/08/28/Protocol-buffer-for-iOS/';
+          this.page.title = 'Protocol buffer for iOS';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://TauRen.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -706,10 +745,6 @@
   
 
 
-
-
-
-  
 
 
 

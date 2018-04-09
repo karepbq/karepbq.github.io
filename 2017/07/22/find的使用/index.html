@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="">
+<html class="theme-next mist use-motion" lang="zh">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -83,7 +83,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Kare'note" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="TauRen" type="application/atom+xml" />
 
 
 
@@ -100,8 +100,9 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="find 的使用">
 <meta property="og:url" content="http://www.karepbq.com/2017/07/22/find的使用/index.html">
-<meta property="og:site_name" content="Kare&#39;note">
+<meta property="og:site_name" content="TauRen">
 <meta property="og:description" content="find使用find使我们经常使用的一个命令，也是很简单的一个命令。学习他，有利于提供我们的工作效率哦。（着一片文章记载的，有一些是和上一章文章中的grep,结合使用的） 比如：我要查找一首MP3,名字叫：末班车的歌曲1find . -name &quot;*.mp3&quot; | grep -i 末班车 其中|的作用是，把find查找的结果传递给后面的命令使用。 例如：查找mp3，但是不要出现”kugou”  “">
+<meta property="og:locale" content="zh">
 <meta property="og:updated_time" content="2017-07-22T00:34:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="find 的使用">
@@ -114,7 +115,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"right","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -139,7 +140,7 @@
 
 
 
-  <title>find 的使用 | Kare'note</title>
+  <title>find 的使用 | TauRen</title>
   
 
 
@@ -157,14 +158,14 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
 
   
   
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -175,7 +176,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Kare'note</span>
+        <span class="site-title">TauRen</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -201,7 +202,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/ || home" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -211,7 +212,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -221,7 +222,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/archives/ || archive" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -277,7 +278,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kare'note">
+      <meta itemprop="name" content="TauRen">
     </span>
 
     
@@ -310,6 +311,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/22/find的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/22/find的使用/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -432,6 +444,13 @@
           
   <div class="comments" id="comments">
     
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
   </div>
 
 
@@ -471,14 +490,14 @@
                alt="Kare" />
           <p class="site-author-name" itemprop="name">Kare</p>
            
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">个人开发杂记</p>
           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
-              <a href="/archives">
+              <a href="/archives/ || archive">
                 <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
@@ -670,6 +689,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://TauRen.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://www.karepbq.com/2017/07/22/find的使用/';
+          this.page.identifier = '2017/07/22/find的使用/';
+          this.page.title = 'find 的使用';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://TauRen.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -682,10 +721,6 @@
   
 
 
-
-
-
-  
 
 
 
