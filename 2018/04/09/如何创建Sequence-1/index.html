@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Rust," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -95,17 +95,16 @@
 
 
 
-<meta name="description" content="Rust 是一个注重安全与速度的现代系统编程语言。 过多的不说了，本章说说如何安装环境，并运行第一个 Hello, Rust Rust官方地址中文资料  Rust中文资料 Rust中文资料  安装1在 iTerm2 中运行：sudo /usr/local/lib/rustlib/uninstall.sh 然后1234$ mkdir ~/projects$ cd ~/projects$ mkdir">
-<meta name="keywords" content="Rust">
+<meta name="description" content="Sequence 其实在coding中经常使用到，比如在使用 Array，Set， Dictionary，这些数据类型中，就会使用到。 那么什么是 Sequence 呢？ Sequence 是一系列相同数据的集合，并且具有迭代能力。常见的 Sequence 是 for _ in ... 循环了，它会遍历整个要输出的对象。 1234let lists = [...]for list in lists">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Rust">
-<meta property="og:url" content="http://www.karepbq.com/2017/08/05/Rust/index.html">
+<meta property="og:title" content="如何创建Sequence">
+<meta property="og:url" content="http://www.karepbq.com/2018/04/09/如何创建Sequence-1/index.html">
 <meta property="og:site_name" content="Kare&#39;note">
-<meta property="og:description" content="Rust 是一个注重安全与速度的现代系统编程语言。 过多的不说了，本章说说如何安装环境，并运行第一个 Hello, Rust Rust官方地址中文资料  Rust中文资料 Rust中文资料  安装1在 iTerm2 中运行：sudo /usr/local/lib/rustlib/uninstall.sh 然后1234$ mkdir ~/projects$ cd ~/projects$ mkdir">
-<meta property="og:updated_time" content="2017-08-04T16:52:41.000Z">
+<meta property="og:description" content="Sequence 其实在coding中经常使用到，比如在使用 Array，Set， Dictionary，这些数据类型中，就会使用到。 那么什么是 Sequence 呢？ Sequence 是一系列相同数据的集合，并且具有迭代能力。常见的 Sequence 是 for _ in ... 循环了，它会遍历整个要输出的对象。 1234let lists = [...]for list in lists">
+<meta property="og:updated_time" content="2018-04-09T03:20:58.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rust">
-<meta name="twitter:description" content="Rust 是一个注重安全与速度的现代系统编程语言。 过多的不说了，本章说说如何安装环境，并运行第一个 Hello, Rust Rust官方地址中文资料  Rust中文资料 Rust中文资料  安装1在 iTerm2 中运行：sudo /usr/local/lib/rustlib/uninstall.sh 然后1234$ mkdir ~/projects$ cd ~/projects$ mkdir">
+<meta name="twitter:title" content="如何创建Sequence">
+<meta name="twitter:description" content="Sequence 其实在coding中经常使用到，比如在使用 Array，Set， Dictionary，这些数据类型中，就会使用到。 那么什么是 Sequence 呢？ Sequence 是一系列相同数据的集合，并且具有迭代能力。常见的 Sequence 是 for _ in ... 循环了，它会遍历整个要输出的对象。 1234let lists = [...]for list in lists">
 
 
 
@@ -133,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://www.karepbq.com/2017/08/05/Rust/"/>
+  <link rel="canonical" href="http://www.karepbq.com/2018/04/09/如何创建Sequence-1/"/>
 
 
 
 
 
-  <title>Rust | Kare'note</title>
+  <title>如何创建Sequence | Kare'note</title>
   
 
 
@@ -248,7 +247,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.karepbq.com/2017/08/05/Rust/">
+    <link itemprop="mainEntityOfPage" href="http://www.karepbq.com/2018/04/09/如何创建Sequence-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kare">
@@ -265,7 +264,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Rust</h1>
+          <h1 class="post-title" itemprop="name headline">如何创建Sequence</h1>
         
 
         <div class="post-meta">
@@ -277,8 +276,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-05T00:32:25+08:00">
-                2017-08-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-09T11:19:42+08:00">
+                2018-04-09
               </time>
             
 
@@ -312,19 +311,40 @@
       
 
       
-        <p>Rust 是一个注重安全与速度的现代系统编程语言。</p>
-<p>过多的不说了，本章说说如何安装环境，并运行第一个 <code>Hello, Rust</code></p>
-<h3 id="Rust官方地址"><a href="#Rust官方地址" class="headerlink" title="Rust官方地址"></a><a href="https://www.rust-lang.org/en-US/install.html" target="_blank" rel="external">Rust官方地址</a></h3><p>中文资料</p>
+        <p><code>Sequence</code> 其实在coding中经常使用到，比如在使用 <code>Array</code>，<code>Set</code>， <code>Dictionary</code>，这些数据类型中，就会使用到。</p>
+<p>那么什么是 <code>Sequence</code> 呢？</p>
+<h3 id="Sequence-是一系列相同数据的集合，并且具有迭代能力。"><a href="#Sequence-是一系列相同数据的集合，并且具有迭代能力。" class="headerlink" title="Sequence 是一系列相同数据的集合，并且具有迭代能力。"></a>Sequence 是一系列相同数据的集合，并且具有迭代能力。</h3><p>常见的 Sequence 是 <code>for _ in ...</code> 循环了，它会遍历整个要输出的对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let lists = [...]</div><div class="line">for list in lists &#123;</div><div class="line">print(list)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这是常见的一个循环 <code>lists</code> 集合的例子,他会依次输出lists中的值。</p>
+<p>为什么他们具有迭代输出的能力了，原因是他们遵循了 Sequence 协议</p>
+<h3 id="Sequence-协议部分内容"><a href="#Sequence-协议部分内容" class="headerlink" title="Sequence 协议部分内容"></a>Sequence 协议部分内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">associatedtype Iterator : IteratorProtocol</div><div class="line">public func makeIterator() -&gt; Self.Iterator</div></pre></td></tr></table></figure>
 <ul>
-<li><a href="http://www.uoota.com/blog/type/rust" target="_blank" rel="external">Rust中文资料</a></li>
-<li><a href="http://rustbook.cn/content/README%20介绍.html" target="_blank" rel="external">Rust中文资料</a></li>
+<li>这个方法要求返回一个 Iterator ，Iterator是一个 <code>IteratorProtocol</code> 协议</li>
 </ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在 iTerm2 中运行：sudo /usr/local/lib/rustlib/uninstall.sh</div></pre></td></tr></table></figure>
-<p>然后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ mkdir ~/projects</div><div class="line">$ cd ~/projects</div><div class="line">$ mkdir hello_world</div><div class="line">$ cd hello_world</div></pre></td></tr></table></figure></p>
-<p>创建一个以<code>.rs</code> 结尾的文件例如: hello_world.rs, 在里面添加文字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fn main() &#123;</div><div class="line">    println!(&quot;Hello, world!&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>然后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rustc hello_world.rs</div><div class="line">$ ./main</div></pre></td></tr></table></figure>
-<p>之后就会出现<code>Hello, world</code></p>
+<h3 id="IteratorProtocol-协议内容"><a href="#IteratorProtocol-协议内容" class="headerlink" title="IteratorProtocol 协议内容"></a>IteratorProtocol 协议内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">associatedtype Element</div><div class="line">public mutating func next() -&gt; Self.Element?</div></pre></td></tr></table></figure>
+<ul>
+<li>这个方法会持续返回基础序列中的下一个值，否则返回 nil</li>
+</ul>
+<p>那么也就是说，如果我们要自己实现一个 Sequence ，必须要遵循两点</p>
+<ul>
+<li>实现 <code>makeIterator()</code> 方法</li>
+<li>创造一个<code>IteratorProtocol</code>的实现</li>
+</ul>
+<p>其实一个数组的运行过程也就是一下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let result = books.makeIterator()</div><div class="line">while let rs = result.next() &#123;&#125;</div></pre></td></tr></table></figure></p>
+<p>在数组遍历时，流程大概也可以推测出来</p>
+<ul>
+<li>首先数组调用了 makeIterator() 方法</li>
+<li>然后再去调用 next() 方法</li>
+</ul>
+<p>在 Swift4.1 中，我使用以下方法也能达成一个 Sequence</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">struct Books: Sequence, IteratorProtocol &#123;</div><div class="line">let names: [String]</div><div class="line">private var idx = 0</div><div class="line"></div><div class="line">init(names: [String]) &#123;</div><div class="line">self.names = names</div><div class="line">&#125;</div><div class="line"></div><div class="line">mutating func next() -&gt; String? &#123;</div><div class="line">guard idx &lt; names.count else &#123;</div><div class="line">return nil</div><div class="line">&#125;</div><div class="line">defer &#123;</div><div class="line">idx += 1</div><div class="line">&#125;</div><div class="line">return names[idx]</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>此方法值得注意的是</p>
+<ul>
+<li>我把 <code>idx</code>当前下标值 私有化，因为是我不想在初始化使用时，外部去干扰内部的<code>idx</code>值</li>
+<li>在初始化时只传入书名称 定义了一个方法 <code>init(names: [String])</code></li>
+</ul>
+<p>最后的调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">func showResult() &#123;</div><div class="line">for result in Books(names: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;]) &#123;</div><div class="line">print(result)</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">// A</div><div class="line">// B</div><div class="line">// C</div><div class="line">// D</div></pre></td></tr></table></figure></p>
+<p>如果觉得我的做法不妥，欢迎指正。</p>
 
       
     </div>
@@ -352,12 +372,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Rust/" rel="tag"># Rust</a>
-          
-        </div>
-      
 
       
       
@@ -367,8 +381,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/22/grep/" rel="next" title="grep(常用)">
-                <i class="fa fa-chevron-left"></i> grep(常用)
+              <a href="/2018/04/09/如何创建Sequence/" rel="next" title="如何创建Sequence">
+                <i class="fa fa-chevron-left"></i> 如何创建Sequence
               </a>
             
           </div>
@@ -376,10 +390,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/28/Protocol-buffer-for-iOS/" rel="prev" title="Protocol buffer for iOS">
-                Protocol buffer for iOS <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -507,7 +517,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rust官方地址"><span class="nav-number">1.</span> <span class="nav-text">Rust官方地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number"></span> <span class="nav-text">安装</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequence-是一系列相同数据的集合，并且具有迭代能力。"><span class="nav-number">1.</span> <span class="nav-text">Sequence 是一系列相同数据的集合，并且具有迭代能力。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sequence-协议部分内容"><span class="nav-number">2.</span> <span class="nav-text">Sequence 协议部分内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IteratorProtocol-协议内容"><span class="nav-number">3.</span> <span class="nav-text">IteratorProtocol 协议内容</span></a></li></ol></div>
             
 
           </div>
