@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="面试题（一）"/>
+
+
+
+
+  <meta name="keywords" content="interview swift," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Hexo">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://www.karepbq.com/2018/05/14/Interview-1/"/>
+
+
+<meta name="description" content="如何设置实时渲染？ 1@IBDesignable让Interface Bulider在特定视图上执行实时渲染  异步同步任务的区别？ 12`同步`：等待任务完成，一个接一个,顺可预测(Predictable Execution Order),通常情况在Main`异步`：不分先后执行顺序完成任务，顺序不可预测(Unpredictable Order)，通常在Background  什么是NSErr">
+<meta name="keywords" content="interview swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试题（一）">
+<meta property="og:url" content="http://www.karepbq.com/2018/05/14/Interview-1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="如何设置实时渲染？ 1@IBDesignable让Interface Bulider在特定视图上执行实时渲染  异步同步任务的区别？ 12`同步`：等待任务完成，一个接一个,顺可预测(Predictable Execution Order),通常情况在Main`异步`：不分先后执行顺序完成任务，顺序不可预测(Unpredictable Order)，通常在Background  什么是NSErr">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2018-05-14T15:55:12.049Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试题（一）">
+<meta name="twitter:description" content="如何设置实时渲染？ 1@IBDesignable让Interface Bulider在特定视图上执行实时渲染  异步同步任务的区别？ 12`同步`：等待任务完成，一个接一个,顺可预测(Predictable Execution Order),通常情况在Main`异步`：不分先后执行顺序完成任务，顺序不可预测(Unpredictable Order)，通常在Background  什么是NSErr">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 面试题（一） - Hexo </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Hexo</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          面试题（一）
+        
+      </h1>
+
+      <time class="post-time">
+          May 14 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <ol>
+<li><p>如何设置实时渲染？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@IBDesignable让Interface Bulider在特定视图上执行实时渲染</div></pre></td></tr></table></figure>
+</li>
+<li><p>异步同步任务的区别？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">`同步`：等待任务完成，一个接一个,顺可预测(Predictable Execution Order),通常情况在Main</div><div class="line">`异步`：不分先后执行顺序完成任务，顺序不可预测(Unpredictable Order)，通常在Background</div></pre></td></tr></table></figure>
+</li>
+<li><p>什么是NSError对象？<br>NSError有三部分组成，分别为 <code>Domain</code> <code>Code</code> <code>UserInfor</code><br>Domain是一个字符串，标记一个错误域</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NSError(domain: &lt;#String#&gt;, code: &lt;#Int#&gt;, userInfo: &lt;#[String : Any]?#&gt;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>什么是Enum？<br><code>enum</code> 是一种类型，包含了相关的一组数据</p>
+</li>
+<li><p>为什么使用synchronized？<br>保证在一定时间内，只有一个线程访问它</p>
+</li>
+<li><p>strong， weak，copy 有什么不同？<br><code>strong</code>:引用计数会增加<br><code>weak</code>:不会增加引用计数<br><code>Copy</code>: 意味着我们在创建对象时复制该对象的值</p>
+</li>
+<li><p>什么是ABI？<br>应用程序二进制接口</p>
+</li>
+<li><p>在Cocoa中有哪些常见的设计模式<br>创造性：单例（Singleton）<br>结构性: 适配器（Adapter）<br>行为：观察者(Observer)</p>
+</li>
+<li><p>Realm数据库的好处<br>a. 开源的DB framework<br>b. 快<br>c. ios 安卓都可以使用</p>
+</li>
+<li><p>Swift 优势是什么？<br>a. 类型安全<br>b. 闭包<br>c. 速度快</p>
+</li>
+<li><p>什么是泛型？<br>泛型可以让我们定义出灵活，且可重用的函数和类型，避免重复代码</p>
+</li>
+<li><p>解释 Swift 中的 lazy？<br>lazy是 Swift 中的一个关键字，他可以延迟属性的初始化时间，知道用到这个属性时，才去加载它</p>
+</li>
+<li><p>解释什么是 defer？<br>延迟执行，当你离开当前代码块，就会去执行</p>
+</li>
+<li><p>KVC 和 KCO 的区别？<br>KVC: 它是一种用间接方式访问类的属性的机制<br>KVO: 它是一种观察者模式，被观察的对象如果有改变，观察者就会收到通知</p>
+</li>
+<li><p>Gurad的好处？<br>可以使语句变得更简洁，避免嵌套很多层，可以使用break，return提前退出</p>
+</li>
+</ol>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="/tags/interview-swift/">interview swift</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2018/04/09/如何创建Sequence-1/">
+        <span class="next-text nav-default">如何创建Sequence</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2014 -
+    
+    2018
+    <span class="footer-author">Kare.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

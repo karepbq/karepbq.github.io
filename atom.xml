@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>TauRen</title>
+  <title>Hexo</title>
   
   <subtitle>杂记</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.karepbq.com/"/>
-  <updated>2018-04-09T03:24:45.907Z</updated>
+  <updated>2018-05-14T15:55:12.049Z</updated>
   <id>http://www.karepbq.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面试题（一）</title>
+    <link href="http://www.karepbq.com/2018/05/14/Interview-1/"/>
+    <id>http://www.karepbq.com/2018/05/14/Interview-1/</id>
+    <published>2018-05-14T15:10:11.000Z</published>
+    <updated>2018-05-14T15:55:12.049Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>如何设置实时渲染？</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@IBDesignable让Interface Bulider在特定视图上执行实时渲染</div></pre></td></tr></table></figure></li><li><p>异步同步任务的区别？</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">`同步`：等待任务完成，一个接一个,顺可预测(Predictable Execution Order),通常情况在Main</div><div class="line">`异步`：不分先后执行顺序完成任务，顺序不可预测(Unpredictable Order)，通常在Background</div></pre></td></tr></table></figure></li><li><p>什么是NSError对象？<br>NSError有三部分组成，分别为 <code>Domain</code> <code>Code</code> <code>UserInfor</code><br>Domain是一个字符串，标记一个错误域</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NSError(domain: &lt;#String#&gt;, code: &lt;#Int#&gt;, userInfo: &lt;#[String : Any]?#&gt;)</div></pre></td></tr></table></figure></li><li><p>什么是Enum？<br><code>enum</code> 是一种类型，包含了相关的一组数据</p></li><li><p>为什么使用synchronized？<br>保证在一定时间内，只有一个线程访问它</p></li><li><p>strong， weak，copy 有什么不同？<br><code>strong</code>:引用计数会增加<br><code>weak</code>:不会增加引用计数<br><code>Copy</code>: 意味着我们在创建对象时复制该对象的值</p></li><li><p>什么是ABI？<br>应用程序二进制接口</p></li><li><p>在Cocoa中有哪些常见的设计模式<br>创造性：单例（Singleton）<br>结构性: 适配器（Adapter）<br>行为：观察者(Observer)</p></li><li><p>Realm数据库的好处<br>a. 开源的DB framework<br>b. 快<br>c. ios 安卓都可以使用</p></li><li><p>Swift 优势是什么？<br>a. 类型安全<br>b. 闭包<br>c. 速度快</p></li><li><p>什么是泛型？<br>泛型可以让我们定义出灵活，且可重用的函数和类型，避免重复代码</p></li><li><p>解释 Swift 中的 lazy？<br>lazy是 Swift 中的一个关键字，他可以延迟属性的初始化时间，知道用到这个属性时，才去加载它</p></li><li><p>解释什么是 defer？<br>延迟执行，当你离开当前代码块，就会去执行</p></li><li><p>KVC 和 KCO 的区别？<br>KVC: 它是一种用间接方式访问类的属性的机制<br>KVO: 它是一种观察者模式，被观察的对象如果有改变，观察者就会收到通知</p></li><li><p>Gurad的好处？<br>可以使语句变得更简洁，避免嵌套很多层，可以使用break，return提前退出</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;如何设置实时渲染？&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="interview swift" scheme="http://www.karepbq.com/tags/interview-swift/"/>
+    
+  </entry>
   
   <entry>
     <title>如何创建Sequence</title>
@@ -155,7 +180,7 @@
     <title>grep(常用)</title>
     <link href="http://www.karepbq.com/2017/07/22/grep/"/>
     <id>http://www.karepbq.com/2017/07/22/grep/</id>
-    <published>2017-07-22T00:15:13.000Z</published>
+    <published>2017-07-22T00:34:57.000Z</published>
     <updated>2017-07-22T00:34:57.000Z</updated>
     
     <content type="html"><![CDATA[<p>grep是一个很大的命令，可以搜索文件，也可以搜索一个文本内的字符，使用过的人相信一定会喜欢上她 ^_^。</p><h2 id="常规"><a href="#常规" class="headerlink" title="常规"></a>常规</h2><p>先简单介绍几个常用的参数。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">-i (ignore-case) 忽略大小写</div><div class="line"></div><div class="line">-n (line-number) 显示行号</div><div class="line"></div><div class="line">-c (count) 统计次数</div><div class="line"></div><div class="line">-r 递归查找</div><div class="line"></div><div class="line">-o 只显示查找到的项</div><div class="line"></div><div class="line">-v 反转查找</div><div class="line"></div><div class="line">-W 精确查找</div></pre></td></tr></table></figure></p><p>比如我现在要查找Pay.h里面’pay’字符出现了多少次。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -c <span class="string">"pay"</span></div></pre></td></tr></table></figure></p><p>再如，我查找一个文件里面的字符‘pay’,不管大小都统计出来<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -c -i <span class="string">"pay"</span></div></pre></td></tr></table></figure></p><p>如果要显示行号，那么加上<code>-n</code>即可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"pay"</span></div></pre></td></tr></table></figure></p><p>例如：我要查找不是以#开始的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -v <span class="string">"#"</span></div></pre></td></tr></table></figure></p><p>例如：我要查找”inet”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ifconfig | grep -w <span class="string">"inet"</span></div></pre></td></tr></table></figure></p><h2 id="grep的正则表达式"><a href="#grep的正则表达式" class="headerlink" title="grep的正则表达式"></a>grep的正则表达式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="string">"^"</span> 锚定行的开始 如：<span class="string">'^typedef'</span>匹配所有以typedef开头的行。</div><div class="line"></div><div class="line"><span class="string">"$"</span> 锚定行的结束 如：<span class="string">'typedef$'</span>匹配所有以typedef结尾的行。</div></pre></td></tr></table></figure><p>例如：查找所有以##开头的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"^##"</span></div></pre></td></tr></table></figure></p><p>例如：查找文件里，所有以逗号结束的行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat Pay.h | grep -n <span class="string">"。$"</span></div></pre></td></tr></table></figure></p><h2 id="文件查找"><a href="#文件查找" class="headerlink" title="文件查找"></a>文件查找</h2><p>例如我要查找当前目录及其子目录的所有png图片<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep .png . -r -n -o</div></pre></td></tr></table></figure></p>]]></content>
