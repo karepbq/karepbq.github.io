@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.karepbq.com/"/>
-  <updated>2018-05-26T09:45:49.895Z</updated>
+  <updated>2018-05-27T13:32:47.520Z</updated>
   <id>http://www.karepbq.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS CI (Manual Archive)</title>
+    <link href="http://www.karepbq.com/2018/05/27/iOS-CI-Manual-Archive/"/>
+    <id>http://www.karepbq.com/2018/05/27/iOS-CI-Manual-Archive/</id>
+    <published>2018-05-27T13:30:14.000Z</published>
+    <updated>2018-05-27T13:32:47.520Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="自动打包"><a href="#自动打包" class="headerlink" title="自动打包"></a>自动打包</h2><p>此脚本完成从服务器下发打包任务，然后打包完成上传至服务器的过程<br>针对 ADHoc 方式的手动设置打包过程<br>步骤如下：</p><ol><li>拉取图片（可选）</li><li>使用脚本创建对应的AppIcon（可选）</li><li>根据给定的名称来组合Git地址</li><li>Git Clone</li><li>如果有图片需要替换AppIcon，就去替换AppIcon</li><li>pod repo update &amp;&amp; Pod Update</li><li>打包<ul><li>得到一个显示名称</li><li>设置 project.pbxproj 里面参数(PRODUCT_BUNDLE_IDENTIFIER，CODE_SIGN_STYLE，ProvisioningStyle，DEVELOPMENT_TEAM)</li><li>设置 info.plist 中的显示名称，以及 CFBundleIdentifier</li><li>xcodebuild clean -workspace (清理)</li><li>xcodebuild archive -workspace (打包)</li><li>xcodebuild  -exportArchive（导出）</li></ul></li><li>上传到服务器</li></ol><p><a href="https://github.com/karepbq/iOS-CI-Manual-Archive-" target="_blank" rel="external">Shell地址</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;自动打包&quot;&gt;&lt;a href=&quot;#自动打包&quot; class=&quot;headerlink&quot; title=&quot;自动打包&quot;&gt;&lt;/a&gt;自动打包&lt;/h2&gt;&lt;p&gt;此脚本完成从服务器下发打包任务，然后打包完成上传至服务器的过程&lt;br&gt;针对 ADHoc 方式的手动设置打包过程&lt;br&gt;步骤如
+      
+    
+    </summary>
+    
+    
+      <category term="xcodebuild,CI" scheme="http://www.karepbq.com/tags/xcodebuild-CI/"/>
+    
+  </entry>
   
   <entry>
     <title>URLSession 使用 DNS</title>
