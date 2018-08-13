@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="面试题（二）"/>
+
+
+
+
+  <meta name="keywords" content="面试题," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="TauRen">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://www.karepbq.com/2018/08/13/面试题（二）/"/>
+
+
+<meta name="description" content="什么是IMP class_getMethodImplementation(_ cls: Swift.AnyClass?, _ name: Selector) -&amp;gt; IMP? 指向方法实现的函数指针  什么是isa 是一个Class类型的指针 实例类型 isa -&amp;gt; 类对象 类对象 isa -&amp;gt; 元类（mete class） 元类  isa -&amp;gt; 元类的基类（根类） 基类指向">
+<meta name="keywords" content="面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试题（二）">
+<meta property="og:url" content="http://www.karepbq.com/2018/08/13/面试题（二）/index.html">
+<meta property="og:site_name" content="TauRen">
+<meta property="og:description" content="什么是IMP class_getMethodImplementation(_ cls: Swift.AnyClass?, _ name: Selector) -&amp;gt; IMP? 指向方法实现的函数指针  什么是isa 是一个Class类型的指针 实例类型 isa -&amp;gt; 类对象 类对象 isa -&amp;gt; 元类（mete class） 元类  isa -&amp;gt; 元类的基类（根类） 基类指向">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2018-08-13T09:57:28.477Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试题（二）">
+<meta name="twitter:description" content="什么是IMP class_getMethodImplementation(_ cls: Swift.AnyClass?, _ name: Selector) -&amp;gt; IMP? 指向方法实现的函数指针  什么是isa 是一个Class类型的指针 实例类型 isa -&amp;gt; 类对象 类对象 isa -&amp;gt; 元类（mete class） 元类  isa -&amp;gt; 元类的基类（根类） 基类指向">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 面试题（二） - TauRen </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">TauRen</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          面试题（二）
+        
+      </h1>
+
+      <time class="post-time">
+          Aug 13 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h3 id="什么是IMP"><a href="#什么是IMP" class="headerlink" title="什么是IMP"></a>什么是IMP</h3><blockquote>
+<p><code>class_getMethodImplementation(_ cls: Swift.AnyClass?, _ name: Selector) -&gt; IMP?</code></p>
+<p>指向方法实现的函数指针</p>
+</blockquote>
+<h3 id="什么是isa"><a href="#什么是isa" class="headerlink" title="什么是isa"></a>什么是isa</h3><blockquote>
+<p>是一个Class类型的指针</p>
+<p>实例类型 isa -&gt; 类对象</p>
+<p>类对象 isa -&gt; 元类（mete class）</p>
+<p>元类  isa -&gt; 元类的基类（根类）</p>
+<p>基类指向本身</p>
+</blockquote>
+<h3 id="什么是runTime"><a href="#什么是runTime" class="headerlink" title="什么是runTime"></a>什么是runTime</h3><blockquote>
+<p>又指运行时，在运行时确定数据的类型，方法的调用</p>
+</blockquote>
+<h3 id="如何运用-Runtime-进行模型的归解档"><a href="#如何运用-Runtime-进行模型的归解档" class="headerlink" title="如何运用 Runtime 进行模型的归解档"></a>如何运用 <code>Runtime</code> 进行模型的归解档</h3><blockquote>
+<p>利用 <code>ivar_list</code> 来获取, <code>objc_ivar_list</code> 储存着当前类对象的属性列表</p>
+</blockquote>
+<h3 id="介绍一下runLoop"><a href="#介绍一下runLoop" class="headerlink" title="介绍一下runLoop"></a>介绍一下runLoop</h3><blockquote>
+<p>说白了就是一个循环，一直跑着，有事情就去做，没事情就休眠，等待被唤醒</p>
+</blockquote>
+<h3 id="block-为什么会有循环引用"><a href="#block-为什么会有循环引用" class="headerlink" title="block 为什么会有循环引用"></a>block 为什么会有循环引用</h3><blockquote>
+<p>Block 会对 block中的对象进行持有操作，所以如果再对对象进行持有，就会造成循环引用</p>
+</blockquote>
+<h3 id="block-的解释以及在-ARC-和-MRC-下有什么不同？"><a href="#block-的解释以及在-ARC-和-MRC-下有什么不同？" class="headerlink" title="__block 的解释以及在 ARC 和 MRC 下有什么不同？"></a><code>__block</code> 的解释以及在 <code>ARC</code> 和 <code>MRC</code> 下有什么不同？</h3><blockquote>
+<p><strong>block 在 MRC 下，使用 __</strong>block 修饰，引用计数不会 +1，在 ARC下，使用 __weak 来修饰</p>
+</blockquote>
+<h3 id="autoreleasepool-的使用场景和原理"><a href="#autoreleasepool-的使用场景和原理" class="headerlink" title="autoreleasepool 的使用场景和原理"></a>autoreleasepool 的使用场景和原理</h3><blockquote>
+<p>使用场景：大量循环产生很多中间变量时</p>
+<p>原理：当 retaincount 数大于0时，不释放。当 retainCount 是0时，就释放</p>
+</blockquote>
+<h3 id="TCP-与-UDP-区别-他们位于哪一层？"><a href="#TCP-与-UDP-区别-他们位于哪一层？" class="headerlink" title="TCP 与 UDP 区别,他们位于哪一层？"></a>TCP 与 UDP 区别,他们位于哪一层？</h3><blockquote>
+<ol>
+<li><p>TCP协议可靠；UDP协议不可靠, 原因是：TCP 当发送数据一段时间未收到返回结果时，会继续重新发送数据，而 UDP 不会重发</p>
+</li>
+<li><p>TCP传输数据大，UDP传输数据小</p>
+</li>
+<li><p>TCP 速度慢，UDP 速度快</p>
+<p>它位于 <code>传输层</code></p>
+</li>
+</ol>
+</blockquote>
+<h3 id="TCP-流量控制"><a href="#TCP-流量控制" class="headerlink" title="TCP 流量控制"></a>TCP 流量控制</h3><blockquote>
+<p>就是让对方的发送速度不要太快，要让接收方来的急接受</p>
+<p>原理：利用窗口滑动来实现，意思是，在建立连接是，会给接收方一个接收的数值，大于这个数值就不再发送了</p>
+</blockquote>
+<h3 id="解释下tcp的慢启动特性。"><a href="#解释下tcp的慢启动特性。" class="headerlink" title="解释下tcp的慢启动特性。"></a>解释下tcp的慢启动特性。</h3><blockquote>
+<p>跟网络的速率有关，不好解释呀 </p>
+</blockquote>
+<h3 id="如何用HTTP实现长连接？"><a href="#如何用HTTP实现长连接？" class="headerlink" title="如何用HTTP实现长连接？"></a>如何用HTTP实现长连接？</h3><blockquote>
+<p>发送心跳包</p>
+</blockquote>
+<h3 id="HTTP2-0针对同一个域名的多个请求，会建立多少个tcp连接？"><a href="#HTTP2-0针对同一个域名的多个请求，会建立多少个tcp连接？" class="headerlink" title="HTTP2.0针对同一个域名的多个请求，会建立多少个tcp连接？"></a>HTTP2.0针对同一个域名的多个请求，会建立多少个tcp连接？</h3><blockquote>
+<p>一个</p>
+</blockquote>
+<h3 id="如何使用runtime-hook一个class的某个方法，又如何hook某个instance的方法？"><a href="#如何使用runtime-hook一个class的某个方法，又如何hook某个instance的方法？" class="headerlink" title="如何使用runtime hook一个class的某个方法，又如何hook某个instance的方法？"></a>如何使用runtime hook一个class的某个方法，又如何hook某个instance的方法？</h3><blockquote>
+<p>Method Swizzling</p>
+</blockquote>
+<h3 id="让你设计一种机制检测UIViewController的内存泄漏，你会怎么做？"><a href="#让你设计一种机制检测UIViewController的内存泄漏，你会怎么做？" class="headerlink" title="让你设计一种机制检测UIViewController的内存泄漏，你会怎么做？"></a>让你设计一种机制检测UIViewController的内存泄漏，你会怎么做？</h3><blockquote>
+<p>如果Controller被释放了，但其曾经持有过的子对象如果还存在，那么这些子对象就是泄漏的可疑目标。</p>
+</blockquote>
+<h3 id="通过-UIImage-imageNamed-生成的对象什么时候被释放"><a href="#通过-UIImage-imageNamed-生成的对象什么时候被释放" class="headerlink" title="通过[UIImage imageNamed:]生成的对象什么时候被释放"></a>通过[UIImage imageNamed:]生成的对象什么时候被释放</h3><blockquote>
+<p>因为他们加载图片都是有个一 Autoreleasepool 管理的,可以理解为到 autoreleasepool 结束的时候才释放。</p>
+</blockquote>
+<h3 id="如果页面-A-跳转到-页面-B，A-的-viewDidDisappear-方法和-B-的-viewDidAppear-方法哪个先调用？"><a href="#如果页面-A-跳转到-页面-B，A-的-viewDidDisappear-方法和-B-的-viewDidAppear-方法哪个先调用？" class="headerlink" title="如果页面 A 跳转到 页面 B，A 的  viewDidDisappear 方法和 B 的 viewDidAppear 方法哪个先调用？"></a>如果页面 A 跳转到 页面 B，A 的  <code>viewDidDisappear</code> 方法和 B 的 <code>viewDidAppear</code> 方法哪个先调用？</h3><blockquote>
+<p>在 <code>Navigation push</code> 的情况下 <code>A</code> 页面的 <code>viewDidDisappear</code> 先调用，<code>viewDidAppear</code> 后调用</p>
+<p>在 <code>present</code>情况下，情况则相反</p>
+</blockquote>
+<h3 id="ARC-的本质"><a href="#ARC-的本质" class="headerlink" title="ARC 的本质"></a>ARC 的本质</h3><blockquote>
+<p>autorelease 的使用</p>
+</blockquote>
+<h3 id="解释一下-三次握手-和-四次挥手？解释一下为什么是三次握手-又为什么是-四次挥手"><a href="#解释一下-三次握手-和-四次挥手？解释一下为什么是三次握手-又为什么是-四次挥手" class="headerlink" title="解释一下 三次握手 和 四次挥手？解释一下为什么是三次握手 又为什么是 四次挥手"></a>解释一下 三次握手 和 四次挥手？解释一下为什么是三次握手 又为什么是 四次挥手</h3><blockquote>
+<p>为了防止服务端一直等待，浪费资源</p>
+<p>四次挥手是 Closed 时的逻辑</p>
+</blockquote>
+<h3 id="HTTP-请求中的-GET-和-POST-的区别，Session-和-Cookie-的区别。"><a href="#HTTP-请求中的-GET-和-POST-的区别，Session-和-Cookie-的区别。" class="headerlink" title="HTTP 请求中的 GET 和 POST 的区别，Session 和 Cookie 的区别。"></a>HTTP 请求中的 GET 和 POST 的区别，Session 和 Cookie 的区别。</h3><blockquote>
+<p>Session 存放于服务端</p>
+<p>Cookie 存放于客户端上</p>
+</blockquote>
+<h3 id="谈谈你对-HTTP-1-1，2-0-和-HTTPS-的理解。"><a href="#谈谈你对-HTTP-1-1，2-0-和-HTTPS-的理解。" class="headerlink" title="谈谈你对 HTTP 1.1，2.0 和 HTTPS 的理解。"></a>谈谈你对 HTTP 1.1，2.0 和 HTTPS 的理解。</h3><blockquote>
+<p><em>TLS</em>: Transport Layer Security </p>
+<p>HTTPS 是 HTTP + SSL/TSL 对原本传输的明文加密再进行传输</p>
+</blockquote>
+<h3 id="介绍几种锁，他们的用途和区别"><a href="#介绍几种锁，他们的用途和区别" class="headerlink" title="介绍几种锁，他们的用途和区别"></a>介绍几种锁，他们的用途和区别</h3><blockquote>
+<ul>
+<li><p>NSLock: 将代码放置在Lock与unLock之间，其他线程将无法访问这段代码，资源抢占</p>
+</li>
+<li><p>GCD，信号量：<code>dispatch_semaphore_create</code> <code>dispatch_semaphore_wait</code> <code>dispatch_semaphore_signal</code> </p>
+</li>
+</ul>
+<ol>
+<li><code>dispatch_semaphore_create</code>  创建一个信号量</li>
+<li><code>dispatch_semaphore_wait</code>  等待信号量降低</li>
+<li><code>dispatch_semaphore_signal</code>  提高信号量</li>
+</ol>
+<p>正常的使用顺序是<strong>先降低</strong>然后<strong>再提高</strong>，这两个函数通常成对使用</p>
+</blockquote>
+<h3 id="如何提升-tableview-的流畅度"><a href="#如何提升-tableview-的流畅度" class="headerlink" title="如何提升 tableview 的流畅度"></a>如何提升 <code>tableview</code> 的流畅度</h3><blockquote>
+<ul>
+<li>预估高度，不要实时计算。提前计算好，一次改变</li>
+<li>如果没有触摸时间的地方可以使用 CALayer 代替View</li>
+<li>把耗时的操作放到子线程</li>
+</ul>
+</blockquote>
+<p>未完，待补充。</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="/tags/面试题/">面试题</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2018/08/13/利用-RunTime-统计在一个页面的停留时间/">
+        <span class="next-text nav-default">利用 RunTime 统计用户在一个页面的停留时间</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2014 -
+    
+    2018
+    <span class="footer-author">Kare.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

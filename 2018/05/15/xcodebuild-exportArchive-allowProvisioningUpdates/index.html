@@ -121,7 +121,7 @@
 
     
             <div class="post-content">
-            <p>更新到Xcode9.0后，之前写的自动打包脚本不可用了。原来的导出命令如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">xcodebuild  -exportArchive \</div><div class="line">-archivePath $&#123;xcarchiveDir&#125; \</div><div class="line">-exportPath $&#123;archive_dir&#125; \</div><div class="line">-exportOptionsPlist $&#123;exportPlist&#125; \ &gt; /dev/null 2&gt;&amp;1</div></pre></td></tr></table></figure></p>
+            <p>更新到Xcode9.0后，之前写的自动打包脚本不可用了。原来的导出命令如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xcodebuild  -exportArchive \</span><br><span class="line">-archivePath $&#123;xcarchiveDir&#125; \</span><br><span class="line">-exportPath $&#123;archive_dir&#125; \</span><br><span class="line">-exportOptionsPlist $&#123;exportPlist&#125; \ &gt; /dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure></p>
 <p>今天运行突然报错，说是需要添加</p>
 <blockquote>
 <p>“-allowProvisioningUpdates”</p>
@@ -130,8 +130,8 @@
 <blockquote>
 <p>xcodebuild  exportArchive –help</p>
 </blockquote>
-<p>看了半天，也没发现有设置改属性地方。<br>然后就看了看<code>xcodebuild</code>的参数设置，于是加入了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-allowProvisioningUpdates YES</div></pre></td></tr></table></figure></p>
-<p>在导出命令后面，居然成功导出不报错了。<br>最终的导出命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">xcodebuild  -exportArchive \</div><div class="line">-archivePath $&#123;xcarchiveDir&#125; \</div><div class="line">-exportPath $&#123;archive_dir&#125; \</div><div class="line">-exportOptionsPlist $&#123;exportPlist&#125; \</div><div class="line">-allowProvisioningUpdates YES &gt; /dev/null 2&gt;&amp;1</div></pre></td></tr></table></figure></p>
+<p>看了半天，也没发现有设置改属性地方。<br>然后就看了看<code>xcodebuild</code>的参数设置，于是加入了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-allowProvisioningUpdates YES</span><br></pre></td></tr></table></figure></p>
+<p>在导出命令后面，居然成功导出不报错了。<br>最终的导出命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xcodebuild  -exportArchive \</span><br><span class="line">-archivePath $&#123;xcarchiveDir&#125; \</span><br><span class="line">-exportPath $&#123;archive_dir&#125; \</span><br><span class="line">-exportOptionsPlist $&#123;exportPlist&#125; \</span><br><span class="line">-allowProvisioningUpdates YES &gt; /dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure></p>
 
             </div>
           
